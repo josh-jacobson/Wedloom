@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'less-rails-bootstrap'
 gem 'therubyracer'
+gem 'thin'
 
 #Gems used only in development and testing
 group :development, :test do
