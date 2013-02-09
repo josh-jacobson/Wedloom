@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def budget
   end
+
+  def carousel
+  end
 end
