@@ -1,26 +1,17 @@
-.container#anotherthing
-	#first
-	
-		.when.padd
-			%h2 When is it?
-			%select
-				%option Spring
-				%option Summer
-				%option Fall
-				%option Winter
-		.where.padd
-			%h2 Where is it?
-			%input{:type => "text", :placeholder => "Enter your Zip Code"}
-		.what.padd
-			%h2 How many people?
-			%input{:type => "text", :placeholder => "Enter your # of guests"}
-			
-		%a{:class => 'btn btn-primary btn-large'}
-			Next »				
-	#second
-		.roughnum
-			
-	#third
-		.result
-		.changeguests
-		.breakdown
+.container
+	.when.padd
+		%h2 When is it?
+		%select
+			%option Spring
+			%option Summer
+			%option Fall
+			%option Winter
+	.where.padd
+		%h2 Where is it?
+		%input{:type => "text", :placeholder => "Enter your Zip Code"}
+	.roughnum
+		%h2 About how many guests would be there?
+		%input{:type => "text", :placeholder => "Enter your Zip Code"}
+	%a{:class => 'btn btn-primary btn-large'}
+		Next »				
+
