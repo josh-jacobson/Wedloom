@@ -1,0 +1,12 @@
+td img{
+	width:500px;
+	height:300px;
+}
+
+table, td {
+	border: 5px white solid;
+}
+
+thead{
+
+}
