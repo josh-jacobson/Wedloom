@@ -4,15 +4,10 @@ Testapp::Application.routes.draw do
   
   get "static_pages/home"
 
-  get "static_pages/about"
-
-  get "static_pages/budget"
-
-  get "static_pages/carousel"
-
   match '/about', to: 'static_pages#about'
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
+  match '/canvas', to: 'static_pages#canvas'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

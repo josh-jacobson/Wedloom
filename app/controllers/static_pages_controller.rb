@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def carousel
   end
+
+  def canvas
+  end
 end
