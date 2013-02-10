@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venue: MyString
+  venue_price: 1
+  food: MyString
+  food_price_integer: MyString
+
+two:
+  venue: MyString
+  venue_price: 1
+  food: MyString
+  food_price_integer: MyString
