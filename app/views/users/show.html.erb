@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Venue:</b>
+  <%= @user.venue %>
+</p>
+
+<p>
+  <b>Venue price:</b>
+  <%= @user.venue_price %>
+</p>
+
+<p>
+  <b>Food:</b>
+  <%= @user.food %>
+</p>
+
+<p>
+  <b>Food price:</b>
+  <%= @user.food_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
