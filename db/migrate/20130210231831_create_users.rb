@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :venue
       t.integer :venue_price
       t.string :food
-      t.string :food_price_integer
+      t.integer :food_price
 
       t.timestamps
     end

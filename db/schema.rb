@@ -13,22 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20130210231831) do
 
-  create_table "budgets", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.string   "venue"
     t.integer  "venue_price"
     t.string   "food"
     t.integer  "food_price"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "venue"
-    t.integer  "venue_price"
-    t.string   "food"
-    t.string   "food_price_integer"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
 end
