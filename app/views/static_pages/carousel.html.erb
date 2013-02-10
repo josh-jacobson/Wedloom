@@ -218,6 +218,9 @@
 
 
 
+    <!-- hard code user for now: -->
+    <% user = User.find(1) %>
+
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
@@ -228,7 +231,7 @@
             <div class="carousel-caption">
               <h1>Rustic Farmhouse</h1>
               <p class="lead">$5,000 - $7,000</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "7000", "user[venue]" => "Farmhouse"), :class => "btn btn-large btn-primary", :remote => "true", :method => :put, :confirm => "Sure?") %>
             </div>
           </div>
         </div>
@@ -238,7 +241,7 @@
             <div class="carousel-caption">
               <h1>Boutique Hotel</h1>
               <p class="lead">$5,000 - $7,000</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "9000", "user[venue]" => "Hotel"), :class => "btn btn-large btn-primary", :remote => "true", :method => :put, :confirm => "Sure?") %>
             </div>
           </div>
         </div>
@@ -248,7 +251,7 @@
             <div class="carousel-caption">
               <h1>Golf Club</h1>
               <p class="lead">$6,500 - $7,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "7700", "user[venue]" => "Golf Club"), :class => "btn btn-large btn-primary", :remote => "true", :method => :put, :confirm => "Sure?") %>
             </div>
           </div>
         </div>
@@ -258,7 +261,7 @@
             <div class="carousel-caption">
               <h1>Hotel</h1>
               <p class="lead">$6,500 - $7,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "9000", "user[venue]" => "Hotel"), :class => "btn btn-large btn-primary", :remote => "true", :method => :put, :confirm => "Sure?") %>
             </div>
           </div>
         </div>
@@ -267,18 +270,11 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Mansion</h1>
-              <p class="lead">$95,500 - 102,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <p class="lead">$95,500 - $102,700</p>
+              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "102700", "user[venue]" => "Mansion"), :class => "btn btn-large btn-primary", :remote => "true", :method => :put, :confirm => "Sure?") %>
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
 
 
 

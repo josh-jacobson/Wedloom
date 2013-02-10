@@ -6,6 +6,14 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+        <% user = User.find(1) %>
+        <p><%= user.venue %>
+        <%= user.venue_price %></p>
+        <p><%= user.food %>
+        <%= user.food_price %></p>
+
+
+
         <table>
             <thead>
                 <th colspan="3"><h1>Your Wedding Loom<h1></th>
@@ -26,11 +34,5 @@
                 </tr>    
             </tablebody>
         </table>  
-
-        <% Budget.create(venue: "Barn", venue_price: "6000", food: "Gourmet", food_price: "4000")  %>
-        <%= Budget.find(1).venue %>
-        <%= Budget.find(1).venue_price %>
-        <%= Budget.find(1).food %>
-        <%= Budget.find(1).food_price %>
 	</body>
 </html>
