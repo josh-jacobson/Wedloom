@@ -11,6 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130209224203) do
+
+  create_table "budget_elements", :force => true do |t|
+    t.string   "element"
+    t.string   "selection"
+    t.integer  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "budgets", :force => true do |t|
+    t.string   "venue"
+    t.integer  "venue_price"
+    t.string   "food"
+    t.integer  "food_price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end

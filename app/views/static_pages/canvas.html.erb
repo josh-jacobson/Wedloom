@@ -24,6 +24,12 @@
                 
                 </tr>    
             </tablebody>
-        </table>   
+        </table>  
+
+        <% Budget.create(venue: "Barn", venue_price: "6000", food: "Gourmet", food_price: "4000")  %>
+        <%= Budget.find(1).venue %>
+        <%= Budget.find(1).venue_price %>
+        <%= Budget.find(1).food %>
+        <%= Budget.find(1).food_price %>
 	</body>
 </html>
