@@ -1,17 +1,22 @@
 .container
 	.when.padd
-		%h2 When is it?
-		%select
-			%option Spring
-			%option Summer
-			%option Fall
-			%option Winter
-	.where.padd
-		%h2 Where is it?
-		%input{:type => "text", :placeholder => "Enter your Zip Code"}
-	.roughnum
-		%h2 About how many guests would be there?
-		%input{:type => "text", :placeholder => "# of Guests"}
+		%center
+			%h2 When is it?
+			%select
+				%option Spring
+				%option Summer
+				%option Fall
+				%option Winter
+		.where.padd
+		%center
+			%h2 Where is it?
+			%input{:type => "text", :placeholder => "Enter your Zip Code"}
+		%center
+		.roughnum
+		%center	
+			%h2 About how many guests would be there?
+			%input{:type => "text", :placeholder => "# of Guests"}
 	%a
-	= link_to 'Next »', canvas_path, :class => "btn btn-primary btn-large"
+		%center
+			= link_to 'Next »', canvas_path, :class => "btn btn-primary btn-large"
 

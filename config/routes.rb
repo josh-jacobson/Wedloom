@@ -8,6 +8,7 @@ Testapp::Application.routes.draw do
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
   match '/canvas', to: 'static_pages#canvas'
+  match '/home', to: 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
