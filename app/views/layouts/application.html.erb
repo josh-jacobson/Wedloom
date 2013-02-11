@@ -2,7 +2,7 @@
 <html>
 <head>
   <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
-  <title>Wedloom · The Time of Your Life, Made Simpler</title>
+  <title>Wedloom</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -22,8 +22,7 @@
           <ul class="nav">
             
             <li><%= link_to "Get Started", budget_path %></li>
-            <li><%= link_to "Your Loom", canvas_path %></li>
-            <li><%= link_to "Get Ideas", carousel_path %></li>
+            <li><%= link_to "Your Loom", 'users/1' %></li>
             <li><%= link_to "About Us", about_path %></li>
           </ul>
         </div>
