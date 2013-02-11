@@ -11,6 +11,9 @@ class StaticPagesController < ApplicationController
   def carousel
   end
 
+  def foodcarousel
+  end
+
   def canvas
   end
 end

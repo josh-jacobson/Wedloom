@@ -15,7 +15,7 @@
             <tablebody>
                 <tr>
                     <td><%= link_to(image_tag('barn.jpg'), carousel_path) %></td>
-                    <td><%= image_tag("spudbar.jpg") %></td>
+                    <td><%= link_to(image_tag("spudbar.jpg"), foodcarousel_path) %></td>
                      <td><%= image_tag("Flowers.jpg") %></td>
                 </tr>    
                 <tr>
@@ -28,7 +28,7 @@
                 </tr>    
             </tablebody>
         </table>  
-        <hr size="10">
+        <!-- <hr size="10">
         <span8>
         <center> 
         <h1>Your Current Budget</h1>   
@@ -41,7 +41,7 @@
                 <br>Food Budget: <%= user.food_price %></p>
 	       </h3>
         </center>
-        </span8>
+        </span8> -->
         <hr size="10">
     </body>
 </html>

@@ -25,8 +25,6 @@
 
 
 
-
-
     /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
@@ -218,67 +216,54 @@
 
 
 
+    <!-- hard code user for now: -->
+    <% user = User.find(1) %>
+
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <%= image_tag("restaurant.jpg", :width => "100%") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Rustic Farmhouse</h1>
-              <p class="lead">$5,000 - $7,000</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-         <%= image_tag("sitdowndinner.jpg", :width => "100%") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Boutique Hotel</h1>
-              <p class="lead">$5,000 - $7,000</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag("spudbar.jpg", :width => "100%") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Golf Club</h1>
-              <p class="lead">$6,500 - $7,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
           <%= image_tag("buffet.jpg", :width => "100%") %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Hotel</h1>
-              <p class="lead">$6,500 - $7,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <h1>Traditional Buffet</h1>
+              <p class="lead">$5,000 - $7,000</p>
+              <%= link_to("Add to Budget", user_path(user, "user[food_price]" => "7000", "user[food]" => "Buffet"), :class => "btn btn-large btn-primary", :method => :put ) %>
             </div>
           </div>
         </div>
-       <div class="item">
-          <%= image_tag("mansion.jpg", :width => "100%") %>
+        <div class="item">
+         <%= image_tag("foodstation.jpg", :width => "100%") %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Mansion</h1>
-              <p class="lead">$95,500 - 102,700</p>
-              <a class="btn btn-large btn-primary" href="#">Add to Budget</a>
+              <h1>Food Stations</h1>
+              <p class="lead">$4,500 - $7,500</p>
+              <%= link_to("Add to Budget", user_path(user, "user[food_price]" => "7500", "user[food]" => "Food Station"), :class => "btn btn-large btn-primary", :method => :put ) %>
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
+        <div class="item">
+          <%= image_tag("sitdowndinner.jpg", :width => "100%") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Sit Down Dinner</h1>
+              <p class="lead">$8,500 - $9,900</p>
+              <%= link_to("Add to Budget", user_path(user, "user[food_price]" => "9900", "user[food]" => "Sit Down Dinner"), :class => "btn btn-large btn-primary", :method => :put ) %>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("apps.jpg", :width => "100%") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Appetizers</h1>
+              <p class="lead">$2,500 - $3,500</p>
+              <%= link_to("Add to Budget", user_path(user, "user[food_price]" => "3500", "user[food]" => "Appetizers"), :class => "btn btn-large btn-primary", :method => :put ) %>
+            </div>
+          </div>
+        </div>
+       
 
 
 
@@ -289,58 +274,10 @@
 
 
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      
-        <div class="span4">
-          
-       
-        </div><!-- /.span4 -->
-        <div class="span4">
-        
-          <h2>Total Budget</h2>
-          <p>TBD...</p>
-         
-        </div><!-- /.span4 -->
-        <div class="span4">
-
-        </div><!-- /.span4 -->
-  
-
-
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
     <script>
       !function ($) {
         $(function(){

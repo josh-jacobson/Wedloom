@@ -12,7 +12,7 @@
             <tablebody>
                 <tr>
                     <td><%= link_to(image_tag('barn.jpg'), carousel_path) %></td>
-                    <td><%= image_tag("spudbar.jpg") %></td>
+                    <td><%= link_to(image_tag("spudbar.jpg"), foodcarousel_path) %></td>
                      <td><%= image_tag("Flowers.jpg") %></td>
                 </tr>    
                 <tr>
@@ -28,14 +28,42 @@
         <hr size="10">
         <span8>
         <center> 
-        <h1>Your Current Budget</h1>
+
+
+            <table>
+                
+                <tablebody>
+                   
+
+                    <tr>
+                        <td><h3><%= @user.venue %>: <h3/></td>
+                        <td><h3>$<%= number_with_delimiter(@user.venue_price, :delimiter => ',') %> </td>
+                    </tr>    
+                     <tr>
+                        <td><h3><%= @user.food %>: <h3></td>
+                        <td><h3>$<%= number_with_delimiter(@user.food_price, :delimiter => ',') %></h3></td>
+                    </tr>   
+                    <tr>
+                        <td><h2>Total:</h2></td>
+                        <td><h2>$<%= number_with_delimiter(@user.venue_price + @user.food_price, :delimiter => ',') %></h2></td>
+                    </tr>
+         
+                </tablebody>
+            </table>  
+
+
+
+
+
+    <!--     <h1>Your Current Budget</h1>
         <br>
             <h3> 
                 Selected Venue Type: <%= @user.venue %> 
-                <br>Venue Budget: <%= @user.venue_price %></p>
+                <br>Estimated Venue Cost: <%= @user.venue_price %></p>
                 <br>Selected Food Type: <%= @user.food %>
-                <br>Food Budget: <%= @user.food_price %></p>
-	       </h3>
+                <br>Estimated Food Cost: <%= @user.food_price %>
+                <br>Total Cost: <%= @user.food_price + @user.venue_price %></p>
+	       </h3> -->
         </center>
         </span8>
         <hr size="10">
