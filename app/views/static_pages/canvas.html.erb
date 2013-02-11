@@ -6,12 +6,6 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-        <% user = User.find(1) %>
-        <p><%= user.venue %>
-        <%= user.venue_price %></p>
-        <p><%= user.food %>
-        <%= user.food_price %></p>
-
 
 
         <table>
@@ -34,5 +28,20 @@
                 </tr>    
             </tablebody>
         </table>  
-	</body>
+        <hr size="10">
+        <span8>
+        <center> 
+        <h1>Your Current Budget</h1>   
+        <% user = User.find(1) %>
+        <br>
+            <h3> 
+                Selected Venue Type: <%= user.venue %> 
+                <br>Venue Budget:<%= user.venue_price %></p>
+                <br>Selected Food Type: <%= user.food %>
+                <br>Food Budget: <%= user.food_price %></p>
+	       </h3>
+        </center>
+        </span8>
+        <hr size="10">
+    </body>
 </html>
