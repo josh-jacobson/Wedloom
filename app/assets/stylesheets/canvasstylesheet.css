@@ -11,10 +11,8 @@ table, td {
 }
 
 .budget{
-
-max-width:1000px ;
 text-align:left;
-padding:5px;
+padding:40px;
 }
 /*	display: block;
 	margin-left: auto;
