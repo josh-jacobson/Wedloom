@@ -2,7 +2,29 @@
 		<link type="text/css" rel="stylesheet" href="canvasstylesheet.css" />
 		<title>My Photo Page</title>
         <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
-	</head>
+         <script>
+            $(function() {
+                $( "#slider" ).slider({
+                range: "min",
+                min: 0,
+                max: 500,
+                value: 50,
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.value );
+                    var slid = parseInt($('#amount').val());
+
+                    $('#estprice1').text(baseEst1 * slid / 500);
+                    $('#estprice2').text(baseEst2 * slid / 500);
+                }
+            });
+            var baseEst1 = parseInt($('#estprice1').text().replace(/,/g, ''));
+            var baseEst2 = parseInt($('#estprice2').text().replace(/,/g, ''));
+            $('#estprice1').text(baseEst1 * 50 / 500);
+            $('#estprice2').text(baseEst2 * 50 / 500);
+            $( "#amount" ).val( $( "#slider" ).slider( "value" ) );
+        });
+        </script>
+    </head>
 	<body>
         <span8>
         <table>
@@ -28,8 +50,14 @@
         <hr size="10">
         <center>
      
-        <h2>Your Estimated Wedding Cost: $<%= number_with_delimiter(((@user.venue_price + @user.food_price)*0.9).round(0), :delimiter => ',') %> - 
-            $<%= number_with_delimiter(((@user.venue_price + @user.food_price)*1.1).round(0), :delimiter => ',') %>    
+        <h2>Your Estimated Wedding Cost: $
+            <span id='estprice1'>
+            <%= number_with_delimiter(((@user.venue_price + @user.food_price)*0.9).round(0), :delimiter => ',') %> 
+            </span>
+            - $
+            <span id='estprice2'>
+            <%= number_with_delimiter(((@user.venue_price + @user.food_price)*1.1).round(0), :delimiter => ',') %>    
+            </span>
         </h2>    
          
 
@@ -60,9 +88,12 @@
                 </tablebody>
             </table>  
             <hr>
-            
+            <p>
+                <label for='amount'>Number of Guests:</label>
+                <input type='text' id='amount' placeholder='50' style="border: 0; text-align: center; color: #f6931f; font-weight: bold;"/>
+            </p>
             <div id='slider'></div>
-
+             
             <h3 class="budget"> Tips to help save: <p><%= @user.venue %>s typically charge higher prices for Saturday nights. Consider having your wedding reception on a Saturday afternoon 
             </h3>
             </center>

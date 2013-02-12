@@ -10,6 +10,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less'
 gem 'less-rails'
 gem 'therubyracer'
+gem 'jquery-ui-rails'
 #gem 'libv8'
 
 #Gems used only in development
