@@ -4,7 +4,7 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
+        <span8>
         <table>
             <thead>
                 <th colspan="3"><h1>Your Wedding Loom<h1></th>
@@ -26,31 +26,46 @@
             </tablebody>
         </table>  
         <hr size="10">
-        <span8>
-        <center> 
+        <center>
+     
+        <h2>Your Estimated Wedding Cost: $<%= number_with_delimiter(((@user.venue_price + @user.food_price)*0.9).round(0), :delimiter => ',') %> - 
+            $<%= number_with_delimiter(((@user.venue_price + @user.food_price)*1.1).round(0), :delimiter => ',') %>    
+        </h2>    
+         
 
 
-            <table>
+            <table >
                 
                 <tablebody>
-                   
+                    <div >
 
                     <tr>
                         <td><h3><%= @user.venue %>: <h3/></td>
-                        <td><h3>$<%= number_with_delimiter(@user.venue_price, :delimiter => ',') %> </td>
+                        <td id="price"><h3>  $<%= number_with_delimiter(((@user.venue_price)*0.9).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.venue_price)*1.1).round(0), :delimiter => ',') %></td>
+                    </tr>    
+                    <tr> 
+                        <td><h3>Table and Chair Rentals:</td>
+                        <td><h3>  $<%= number_with_delimiter(((@user.venue_price)*0.1).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.venue_price)*0.2).round(0), :delimiter => ',') %></td>        
                     </tr>    
                      <tr>
                         <td><h3><%= @user.food %>: <h3></td>
-                        <td><h3>$<%= number_with_delimiter(@user.food_price, :delimiter => ',') %></h3></td>
-                    </tr>   
+                        <td><h3>  $<%= number_with_delimiter((@user.food_price)*0.9.round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.food_price)*1.2).round(0), :delimiter => ',') %> </h3></td>
                     <tr>
-                        <td><h2>Total:</h2></td>
-                        <td><h2>$<%= number_with_delimiter(@user.venue_price + @user.food_price, :delimiter => ',') %></h2></td>
-                    </tr>
+                        <td><h3>Tax and 15% Tip:</td>
+                        <td><h3>  $<%= number_with_delimiter(((@user.food_price)*0.15).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.food_price)*0.25).round(0), :delimiter => ',') %></td>        
+
+                    </tr>   
+                   
          
                 </tablebody>
             </table>  
-
+            <hr>
+            
+            <h3 class="budget"> Tips to help save: <p><%= @user.venue %>s typically charge higher prices for Saturday nights. Consider having your wedding reception on a Saturday afternoon 
+            </h3>
+            </center>
+                    
+                    </div>
 
 
 
@@ -64,7 +79,7 @@
                 <br>Estimated Food Cost: <%= @user.food_price %>
                 <br>Total Cost: <%= @user.food_price + @user.venue_price %></p>
 	       </h3> -->
-        </center>
+        
         </span8>
         <hr size="10">
 
