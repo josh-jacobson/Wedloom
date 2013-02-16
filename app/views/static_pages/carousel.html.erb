@@ -202,18 +202,33 @@
 
     <% user = User.find(1) %>
 
+
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag("venues/barn.jpg", :width => "100%") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Rustic Farmhouse</h1>
-              <p class="lead">$5,000 - $7,000</p>
-              <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => "7000", "user[venue]" => "Farmhouse"), :class => "btn btn-large btn-primary", :method => :put ) %>
-            </div>
-          </div>
-        </div>
+        
+
+<!-- Get elements from database: -->
+<% venues = Element.find_all_by_category("Venue") %>
+
+<!-- Generate a carousel with all elements: -->
+
+<% venues.each_with_index do |venue, index|  %>
+  <div class="item <%= " active" if index == 0 %>">
+    <%= image_tag(venue.image, :width => "100%") %>
+    <div class="container">
+      <div class="carousel-caption">
+        <h1><%= venue.name %></h1>
+        <p class="lead">$<%= venue.fixed_cost %></p>
+        <%= link_to("Add to Budget", user_path(user, "user[venue_price]" => venue.fixed_cost, "user[venue]" => venue.name), :class => "btn btn-large btn-primary", :method => :put ) %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+<!-- Old static pages
+
         <div class="item">
          <%= image_tag("restaurant.jpg", :width => "100%") %>
           <div class="container">
@@ -224,6 +239,8 @@
             </div>
           </div>
         </div>
+
+
         <div class="item">
           <%= image_tag("golfclub.jpg", :width => "100%") %>
           <div class="container">
@@ -254,6 +271,8 @@
             </div>
           </div>
         </div>
+
+-->
 
 
 
