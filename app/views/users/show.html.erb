@@ -33,14 +33,14 @@
             </thead>
             <tablebody>
                 <tr>
-                    <td><%= link_to(image_tag('barn.jpg'), carousel_path) %></td>
-                    <td><%= link_to(image_tag("spudbar.jpg"), foodcarousel_path) %></td>
-                     <td><%= image_tag("Flowers.jpg") %></td>
+                    <td><%= link_to image_tag("barn.jpg"), carousel_path(:category => "Venue") %></td>
+                    <td><%= link_to image_tag("spudbar.jpg"), carousel_path(:category => "Food") %></td>
+                     <td><%= link_to image_tag("Flowers.jpg"), carousel_path(:category => "Flowers") %></td>
                 </tr>    
                 <tr>
-                    <td><%= image_tag("dj.jpg") %></td>
-                    <td><%= image_tag("photographer.jpg") %></td>
-                    <td><%= image_tag("guestlist.jpg") %></td>
+                    <td><%= link_to image_tag("dj.jpg"), carousel_path(:category => "Entertainment") %></td>
+                    <td><%= link_to image_tag("photographer.jpg"), carousel_path(:category => "Photographer") %></td>
+                    <td><%= link_to image_tag("guestlist.jpg"), carousel_path(:category => "Dress") %></td>
                     
                 </tr>    
                 

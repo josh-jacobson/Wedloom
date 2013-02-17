@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def carousel
+    @category = params[:category]
   end
 
   def food_carousel
