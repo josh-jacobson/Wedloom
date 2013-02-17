@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  attr_accessible :food, :food_price, :venue, :venue_price
+  attr_accessible :food, :venue, :flowers, :entertainment, :photographer, :dress
 end

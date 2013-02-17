@@ -3,20 +3,21 @@
 <table>
   <tr>
     <th>Venue</th>
-    <th>Venue price</th>
     <th>Food</th>
-    <th>Food price</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Flowers</th>
+    <th>Entertainment</th>
+    <th>Photographer</th>
+    <th>Dress</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.venue %></td>
-    <td><%= user.venue_price %></td>
     <td><%= user.food %></td>
-    <td><%= user.food_price %></td>
+    <td><%= user.flowers %></td>
+    <td><%= user.entertainment %></td>
+    <td><%= user.photographer %></td>
+    <td><%= user.dress %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

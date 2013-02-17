@@ -49,16 +49,18 @@
         </table>  
         <hr size="10">
         <center>
+        
      
         <h2>Your Estimated Wedding Cost: $
             <span id='estprice1'>
-            <%= number_with_delimiter(((@user.venue_price + @user.food_price)*0.9).round(0), :delimiter => ',') %> 
+            <%= number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*0.9).round(0), :delimiter => ',') %> 
             </span>
             - $
             <span id='estprice2'>
-            <%= number_with_delimiter(((@user.venue_price + @user.food_price)*1.1).round(0), :delimiter => ',') %>    
+            <%= number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*1.1).round(0), :delimiter => ',') %>    
             </span>
         </h2>    
+         
          
 
 
@@ -73,20 +75,22 @@
                     </tr>    
                     <tr> 
                         <td><h3>Table and Chair Rentals:</td>
-                        <td><h3>  $<%= number_with_delimiter(((@user.venue_price)*0.1).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.venue_price)*0.2).round(0), :delimiter => ',') %></td>        
+                        <td><h3>  $<%= number_with_delimiter(((@venue.fixed_cost)*0.1).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@venue.fixed_cost)*0.2).round(0), :delimiter => ',') %></td>        
                     </tr>    
                      <tr>
-                        <td><h3><%= @user.food %>: <h3></td>
-                        <td><h3>  $<%= number_with_delimiter((@user.food_price)*0.9.round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.food_price)*1.2).round(0), :delimiter => ',') %> </h3></td>
+                        <td><h3><%= @food.name %>: <h3></td>
+                        <td><h3>  $<%= number_with_delimiter((@food.fixed_cost)*0.9.round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@food.fixed_cost)*1.2).round(0), :delimiter => ',') %> </h3></td>
                     <tr>
                         <td><h3>Tax and 15% Tip:</td>
-                        <td><h3>  $<%= number_with_delimiter(((@user.food_price)*0.15).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@user.food_price)*0.25).round(0), :delimiter => ',') %></td>        
+                        <td><h3>  $<%= number_with_delimiter(((@food.fixed_cost)*0.15).round(0), :delimiter => ',') %> - $<%= number_with_delimiter(((@food.fixed_cost)*0.25).round(0), :delimiter => ',') %></td>        
 
                     </tr>   
                    
          
                 </tablebody>
             </table>  
+
+
             <hr>
             <p>
                 <label for='amount'>Number of Guests:</label>
@@ -101,17 +105,6 @@
                     </div>
 
 
-
-
-    <!--     <h1>Your Current Budget</h1>
-        <br>
-            <h3> 
-                Selected Venue Type: <%= @user.venue %> 
-                <br>Estimated Venue Cost: <%= @user.venue_price %></p>
-                <br>Selected Food Type: <%= @user.food %>
-                <br>Estimated Food Cost: <%= @user.food_price %>
-                <br>Total Cost: <%= @user.food_price + @user.venue_price %></p>
-	       </h3> -->
         
         </span8>
         <hr size="10">

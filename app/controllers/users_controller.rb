@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @venue = Element.find(@user.venue)
+    @food = Element.find(@user.food)
 
     respond_to do |format|
       format.html # show.html.erb
