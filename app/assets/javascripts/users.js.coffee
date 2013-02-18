@@ -15,4 +15,5 @@ $(document).ready ->
     baseEst2 = parseInt($('#estprice2').text().replace(/,/g, ''))
     $('#estprice1').text(baseEst1 * 50 / 500)
     $('#estprice2').text(baseEst2 * 50 / 500)
+    console.log('hahaha fuck')
     $('#amount').val( $('#slider').slider('value'))
