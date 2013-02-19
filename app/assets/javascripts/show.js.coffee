@@ -42,7 +42,7 @@ $(document).ready ->
         bottom: 20
         left: 10
     width = 960 - margin.left - margin.right
-    height = 100 - margin.top - margin.bottom
+    height = 50 - margin.top - margin.bottom
 
     x = d3.scale.ordinal()
         .domain(d3.range(m))
