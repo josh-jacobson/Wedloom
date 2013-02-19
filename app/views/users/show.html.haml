@@ -1,0 +1,100 @@
+.span8
+%table
+    %thead
+        %th{:colspan => "3"}
+            %h1 
+                Your Wedding Loom
+    %tablebody
+        %tr
+            %td 
+                = link_to image_tag("barn.jpg"), carousel_path(:category => "Venue")
+            %td 
+                = link_to image_tag("spudbar.jpg"), carousel_path(:category => "Food")
+            %td 
+                = link_to image_tag("Flowers.jpg"), carousel_path(:category => "Flowers")
+        %tr
+            %td 
+                = link_to image_tag("dj.jpg"), carousel_path(:category => "Entertainment")
+            %td 
+                = link_to image_tag("photographer.jpg"), carousel_path(:category => "Photographer")
+            %td 
+                = link_to image_tag("guestlist.jpg"), carousel_path(:category => "Dress")
+%hr{:size => "10"}
+%center
+    %h2 
+        Your Estimated Wedding Cost: $
+        %span#estprice1
+            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*0.9).round(0), :delimiter => ',')
+        \- $
+        %span#estprice2
+            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*1.1).round(0), :delimiter => ',')        
+     
+        %table
+            %tablebody
+                %div
+                    %tr
+                        %td
+                            %h3
+                                = @venue.name
+                                \:
+                        %td
+                            %h3 
+                                $
+                                = number_with_delimiter(((@venue.fixed_cost)*0.9).round(0), :delimiter => ',')
+                                \- $
+                                = number_with_delimiter(((@venue.fixed_cost)*1.1).round(0), :delimiter => ',')    
+                    %tr 
+                        %td
+                            %h3 
+                                Table and Chair Rentals:
+                        %td
+                            %h3 
+                                $
+                                = number_with_delimiter(((@venue.fixed_cost)*0.1).round(0), :delimiter => ',')
+                                \- $
+                                = number_with_delimiter(((@venue.fixed_cost)*0.2).round(0), :delimiter => ',')            
+                    %tr
+                        %td
+                            %h3 
+                                = @food.name
+                                \:
+                        %td
+                            %h3 
+                                $
+                                = number_with_delimiter((@food.fixed_cost)*0.9.round(0), :delimiter => ',')
+                                \- $
+                                = number_with_delimiter(((@food.fixed_cost)*1.2).round(0), :delimiter => ',')
+                    %tr
+                        %td
+                            %h3 
+                                Tax and 15% Tip:
+                        %td
+                            %h3 
+                                $
+                                = number_with_delimiter(((@food.fixed_cost)*0.15).round(0), :delimiter => ',')
+                                \- $
+                                = number_with_delimiter(((@food.fixed_cost)*0.25).round(0), :delimiter => ',')       
+
+    %hr
+    %p
+        %label{:for => 'amount'}
+            Number of Guests:
+        %input{:type => 'text', :id => 'amount', :placeholder => '50', :style => "border: 0; text-align: center; color: #f6931f; font-weight: bold;"}
+    #slider
+    %svg
+     
+    %h3.budget
+        Tips to help save:
+        %p
+            = @venue.name
+            s typically charge higher prices for Saturday nights. Consider having your wedding reception on a Saturday afternoon 
+%hr{:size => "10"}
+%p#notice
+    = notice
+= javascript_include_tag "show"
+
+
+
+
+
+
