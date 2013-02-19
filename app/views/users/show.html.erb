@@ -69,6 +69,7 @@
         <input type='text' id='amount' placeholder='50' style="border: 0; text-align: center; color: #f6931f; font-weight: bold;"/>
     </p>
     <div id='slider'></div>
+    <svg></svg>
      
     <h3 class="budget"> Tips to help save: <p><%= @venue.name %>s typically charge higher prices for Saturday nights. Consider having your wedding reception on a Saturday afternoon 
     </h3>
@@ -79,7 +80,7 @@
 </span8>
 <hr size="10">
 <p id="notice"><%= notice %></p>
-
+<%= javascript_include_tag "show" %>
 
 
 
