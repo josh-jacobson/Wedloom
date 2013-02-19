@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @element.category %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @element.name %>
+</p>
+
+<p>
+  <b>Fixed cost:</b>
+  <%= @element.fixed_cost %>
+</p>
+
+<p>
+  <b>Variable cost:</b>
+  <%= @element.variable_cost %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @element.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @element.image %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @element.link %>
+</p>
+
+<p>
+  <b>Tier:</b>
+  <%= @element.tier %>
+</p>
+
+
+<%= link_to 'Edit', edit_element_path(@element) %> |
+<%= link_to 'Back', elements_path %>

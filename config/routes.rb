@@ -1,5 +1,7 @@
 Testapp::Application.routes.draw do
 
+  resources :elements
+
   resources :users
   root :to => 'static_pages#home'
   
