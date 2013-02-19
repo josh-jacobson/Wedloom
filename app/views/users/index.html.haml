@@ -1,0 +1,36 @@
+%h1
+  Listing users
+
+%table
+  %tr
+    %th Venue
+    %th Food
+    %th Flowers
+    %th Entertainment
+    %th Photographer
+    %th Dress
+
+  - @users.each do |user|
+    %tr
+      %td 
+        = user.venue
+      %td 
+        = user.food
+      %td 
+        = user.flowers
+      %td 
+        = user.entertainment
+      %td 
+        = user.photographer
+      %td 
+        = user.dress
+      %td 
+        = link_to 'Show', user
+      %td 
+        = link_to 'Edit', edit_user_path(user)
+      %td 
+        = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br/
+
+= link_to 'New User', new_user_path
