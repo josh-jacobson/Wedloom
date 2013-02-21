@@ -1,7 +1,7 @@
 
 <!-- hard code user for now: -->
 
-<% user = user_path(1) %>
+<% user = User.find(1) %>
 
     <!-- Get elements from database: -->
 <% elements = Element.find_all_by_category(@category) %>
