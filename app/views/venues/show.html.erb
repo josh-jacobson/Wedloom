@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @venue.description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @venue.link %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @venue.image %>
+</p>
+
+<p>
+  <b>Supporting images:</b>
+  <%= @venue.supporting_images %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @venue.capacity %>
+</p>
+
+<p>
+  <b>Rental cost:</b>
+  <%= @venue.rental_cost %>
+</p>
+
+<p>
+  <b>Cost per plate:</b>
+  <%= @venue.cost_per_plate %>
+</p>
+
+<p>
+  <b>Minimum:</b>
+  <%= @venue.minimum %>
+</p>
+
+<p>
+  <b>Tier:</b>
+  <%= @venue.tier %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @venue.tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

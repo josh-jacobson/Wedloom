@@ -1,0 +1,43 @@
+<h1>Listing venues</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Image</th>
+    <th>Supporting images</th>
+    <th>Capacity</th>
+    <th>Rental cost</th>
+    <th>Cost per plate</th>
+    <th>Minimum</th>
+    <th>Tier</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= venue.name %></td>
+    <td><%= venue.description %></td>
+    <td><%= venue.link %></td>
+    <td><%= venue.image %></td>
+    <td><%= venue.supporting_images %></td>
+    <td><%= venue.capacity %></td>
+    <td><%= venue.rental_cost %></td>
+    <td><%= venue.cost_per_plate %></td>
+    <td><%= venue.minimum %></td>
+    <td><%= venue.tier %></td>
+    <td><%= venue.tags %></td>
+    <td><%= link_to 'Show', venue %></td>
+    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Venue', new_venue_path %>

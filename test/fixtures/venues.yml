@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  link: MyString
+  image: MyString
+  supporting_images: MyString
+  capacity: 1
+  rental_cost: 1
+  cost_per_plate: 1
+  minimum: 1
+  tier: MyString
+  tags: MyString
+
+two:
+  name: MyString
+  description: MyText
+  link: MyString
+  image: MyString
+  supporting_images: MyString
+  capacity: 1
+  rental_cost: 1
+  cost_per_plate: 1
+  minimum: 1
+  tier: MyString
+  tags: MyString
