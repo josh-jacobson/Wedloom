@@ -22,12 +22,11 @@
 %hr{:size => "10"}
 %center
     %h2 
-        Your Estimated Wedding Cost: $
+        Your Estimated Wedding Cost: 
+        %br/ 
+        $
         %span#estprice1
-            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*0.9).round(0), :delimiter => ',')
-        \- $
-        %span#estprice2
-            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)*1.1).round(0), :delimiter => ',')        
+            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)).round(0), :delimiter => ',')  
      
         %table
             %tablebody
@@ -40,19 +39,15 @@
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter(((@venue.fixed_cost)*0.9).round(0), :delimiter => ',')
-                                \- $
-                                = number_with_delimiter(((@venue.fixed_cost)*1.1).round(0), :delimiter => ',')    
+                                = number_with_delimiter((@venue.fixed_cost).round(0), :delimiter => ',') 
                     %tr 
                         %td
                             %h3 
-                                Table and Chair Rentals:
+                                Furniture Rentals:
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter(((@venue.fixed_cost)*0.1).round(0), :delimiter => ',')
-                                \- $
-                                = number_with_delimiter(((@venue.fixed_cost)*0.2).round(0), :delimiter => ',')            
+                                = number_with_delimiter((@venue.fixed_cost).round(0), :delimiter => ',')       
                     %tr
                         %td
                             %h3 
@@ -61,25 +56,24 @@
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter((@food.fixed_cost)*0.9.round(0), :delimiter => ',')
-                                \- $
-                                = number_with_delimiter(((@food.fixed_cost)*1.2).round(0), :delimiter => ',')
+                                = number_with_delimiter((@food.fixed_cost).round(0), :delimiter => ',')
                     %tr
                         %td
                             %h3 
-                                Tax and 15% Tip:
+                                Gratuity/Tax:
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter(((@food.fixed_cost)*0.15).round(0), :delimiter => ',')
-                                \- $
-                                = number_with_delimiter(((@food.fixed_cost)*0.25).round(0), :delimiter => ',')       
+                                = number_with_delimiter((@food.fixed_cost).round(0), :delimiter => ',')   
 
     %hr
     %p
         %label{:for => 'amount'}
             Number of Guests:
-        %input{:type => 'text', :id => 'amount', :placeholder => '50', :style => "border: 0; text-align: center; color: #f6931f; font-weight: bold;"}
+        %p#amount
+            %strong
+                50
+        /%input{:type => 'text', :id => 'amount', :placeholder => '50', :style => "border: 0; text-align: center; color: #f6931f; font-weight: bold;"}
     #slider
     %svg
      
