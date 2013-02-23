@@ -1,17 +1,17 @@
 $(document).ready ->
     $('#slider').slider
         range: 'min',
-        min: 0,
-        max: 500,
-        value: 50,
+        min: 50,
+        max: 300,
+        value: 150,
         slide: (event, ui) ->
             $('#amount').html(ui.value)
             slid = parseInt($('#amount').html())
             
-            $('#estprice1').text(baseEst1 * slid / 500)
+            $('#estprice1').text(baseEst1 * slid / 150)
         
     baseEst1 = parseInt($('#estprice1').text().replace(/,/g, ''))
-    $('#estprice1').text(baseEst1 * 50 / 500)
+    $('#estprice1').text(baseEst1)
     $('#amount').html( $('#slider').slider('value'))
 
 
