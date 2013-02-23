@@ -14,8 +14,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @venue = Element.find(@user.venue)
-    @food = Element.find(@user.food)
+    @venue = Venue.find(@user.venue)
+    @venue_cost = @venue.rental_cost + (@venue.cost_per_plate * 150)
+    @wedding_cost = @venue_cost / 0.4
 
     respond_to do |format|
       format.html # show.html.erb

@@ -18,15 +18,16 @@
                 = link_to image_tag("photographer.jpg"), carousel_path(:category => "Photographer")
             %td 
                 = link_to image_tag("wedding_dress.jpg"), carousel_path(:category => "Dress")
+
               
 %hr{:size => "10"}
 %center
     %h2 
-        Your Estimated Wedding Cost: 
+        Your Estimated Wedding Cost for Chicago: 
         %br/ 
         $
         %span#estprice1
-            = number_with_delimiter(((@venue.fixed_cost + @food.fixed_cost)).round(0), :delimiter => ',')  
+            = @wedding_cost
      
         %table
             %tablebody
@@ -34,37 +35,35 @@
                     %tr
                         %td
                             %h3
-                                = @venue.name
-                                \:
+                                = @venue.name + " rental:  "
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter((@venue.fixed_cost).round(0), :delimiter => ',') 
+                                = number_with_delimiter(@venue.rental_cost, :delimiter => ',')
                     %tr 
                         %td
                             %h3 
-                                Furniture Rentals:
+                                Cost per plate:
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter((@venue.fixed_cost).round(0), :delimiter => ',')       
+                                = number_with_delimiter(@venue.cost_per_plate, :delimiter => ',')
                     %tr
                         %td
                             %h3 
-                                = @food.name
-                                \:
+                                Gratuity:
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter((@food.fixed_cost).round(0), :delimiter => ',')
+                                = number_with_delimiter((@venue_cost * 0.20).round(0), :delimiter => ',')
                     %tr
                         %td
                             %h3 
-                                Gratuity/Tax:
+                                Total Wedding Cost:
                         %td
                             %h3 
                                 $
-                                = number_with_delimiter((@food.fixed_cost).round(0), :delimiter => ',')   
+                                = number_with_delimiter(@wedding_cost.round(0), :delimiter => ',')
 
     %hr
     %p
