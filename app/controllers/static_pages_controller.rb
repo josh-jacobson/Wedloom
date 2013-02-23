@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     @category = params[:category]
   end
 
-  def food_carousel
+  def inspiration
   end
 
   def canvas

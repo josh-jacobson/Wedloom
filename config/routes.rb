@@ -13,7 +13,7 @@ Testapp::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
-  match '/foodcarousel', to: 'static_pages#food_carousel'
+  match '/inspiration', to: 'static_pages#inspiration'
   match '/canvas', to: 'static_pages#canvas'
   match '/home', to: 'static_pages#home'
 
