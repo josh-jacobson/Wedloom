@@ -8,10 +8,37 @@ $(document).ready ->
             $('#amount').html(ui.value)
             slid = parseInt($('#amount').html())
             
-            $('#estprice1').text(baseEst1 * slid / 150)
+            # TODO: Complete hack, brain not working. Make estprice into a class and iterate through
+
+            $('#estprice1').text(baseEst1 * slid / randomSmoother)
+            $('#estprice2').text(baseEst2 * slid / randomSmoother)
+            $('#estprice3').text(baseEst3 * slid / randomSmoother)
+            $('#estprice4').text(baseEst4 * slid / randomSmoother)
+            $('#estprice5').text(baseEst5 * slid / randomSmoother)
+            $('#estprice6').text(baseEst6 * slid / randomSmoother)
+            $('#estprice7').text(baseEst7 * slid / randomSmoother)
+            $('#estprice8').text(baseEst8 * slid / randomSmoother)
         
     baseEst1 = parseInt($('#estprice1').text().replace(/,/g, ''))
-    $('#estprice1').text(baseEst1)
+    baseEst2 = parseInt($('#estprice2').text().replace(/,/g, ''))
+    baseEst3 = parseInt($('#estprice3').text().replace(/,/g, ''))
+    baseEst4 = parseInt($('#estprice4').text().replace(/,/g, ''))
+    baseEst5 = parseInt($('#estprice5').text().replace(/,/g, ''))
+    baseEst6 = parseInt($('#estprice6').text().replace(/,/g, ''))
+    baseEst7 = parseInt($('#estprice7').text().replace(/,/g, ''))
+    baseEst8 = parseInt($('#estprice8').text().replace(/,/g, ''))
+
+    randomSmoother = 1000
+
+    $('#estprice1').text(baseEst1 * 150 / randomSmoother) #Adding default num of guests divided by some random number
+    $('#estprice2').text(baseEst2 * 150 / randomSmoother)
+    $('#estprice3').text(baseEst3 * 150 / randomSmoother)
+    $('#estprice4').text(baseEst4 * 150 / randomSmoother)
+    $('#estprice5').text(baseEst5 * 150 / randomSmoother)
+    $('#estprice6').text(baseEst6 * 150 / randomSmoother)
+    $('#estprice7').text(baseEst7 * 150 / randomSmoother)
+    $('#estprice8').text(baseEst8 * 150 / randomSmoother)
+
     $('#amount').html( $('#slider').slider('value'))
 
 
@@ -24,8 +51,8 @@ $(document).ready ->
         [{'x': 0, 'y': 0.5}]
         [{'x': 0, 'y': 0.25}]
     ]
-    n = 4
-    m = 1
+    n = 4  # Num of Stacks
+    m = 1  # Num of Bars
 
     stack = d3.layout.stack()
     layers = stack(d3.range(n).map( (d) -> stockdata[d]))
@@ -38,7 +65,7 @@ $(document).ready ->
         right: 10
         bottom: 20
         left: 10
-    width = 960 - margin.left - margin.right
+    width = 600 - margin.left - margin.right
     height = 50 - margin.top - margin.bottom
 
     x = d3.scale.ordinal()
