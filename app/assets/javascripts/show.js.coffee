@@ -18,6 +18,14 @@ $(document).ready ->
             $('#estprice6').text(baseEst6 * slid / randomSmoother)
             $('#estprice7').text(baseEst7 * slid / randomSmoother)
             $('#estprice8').text(baseEst8 * slid / randomSmoother)
+
+            venue = layer.select('rect')
+            venue.attr('width', baseEst2 * slid / randomSmoother)
+                .transition()
+                .delay( (d, i) -> i * 10 )
+            svg.attr('width', 600 / slid)
+                #.attr('x', (d) -> y(d.y0 + d.y))
+                #.attr('width', (d) -> y(d.y0) - y(d.y0 + d.y))
         
     baseEst1 = parseInt($('#estprice1').text().replace(/,/g, ''))
     baseEst2 = parseInt($('#estprice2').text().replace(/,/g, ''))
@@ -30,7 +38,7 @@ $(document).ready ->
 
     randomSmoother = 1000
 
-    $('#estprice1').text(baseEst1 * 150 / randomSmoother) #Adding default num of guests divided by some random number
+    $('#estprice1').text(baseEst1 * 150 / randomSmoother) #Adding default num of guests divided by some random smoother
     $('#estprice2').text(baseEst2 * 150 / randomSmoother)
     $('#estprice3').text(baseEst3 * 150 / randomSmoother)
     $('#estprice4').text(baseEst4 * 150 / randomSmoother)
@@ -46,12 +54,14 @@ $(document).ready ->
     #---------------- d3 -----------------#
 
     stockdata = [
-        [{'x': 0, 'y': 1}]
-        [{'x': 0, 'y': 0.75}]
-        [{'x': 0, 'y': 0.5}]
-        [{'x': 0, 'y': 0.25}]
+        [{'x': 0, 'y': baseEst2 * 0.25}]
+        [{'x': 0, 'y': baseEst2 * 0.4}]
+        [{'x': 0, 'y': baseEst2 * 0.55}]
+        [{'x': 0, 'y': baseEst2 * 0.6}]
+        [{'x': 0, 'y': baseEst2 * 0.75}]
+        [{'x': 0, 'y': baseEst2}]
     ]
-    n = 4  # Num of Stacks
+    n = 6  # Num of Stacks
     m = 1  # Num of Bars
 
     stack = d3.layout.stack()
