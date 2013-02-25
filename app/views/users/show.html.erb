@@ -1,0 +1,96 @@
+<center>
+<h2>
+    Your Estimated Wedding Cost for Chicago: $<%= number_with_delimiter(3000+7000+@venue_cost, :delimiter => ',') %>
+</h2>
+
+<script type="text/javascript">
+
+$(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'bar'
+            },
+            title: {
+                text: 'Total Wedding Budget'
+            },
+            xAxis: {
+                categories: ['Budget']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total Wedding Budget'
+                }
+            },
+            legend: {
+                backgroundColor: '#FFFFFF',
+                reversed: true
+            },
+            tooltip: {
+                formatter: function() {
+                    return ''+
+                        this.series.name +': '+ this.y +'';
+                }
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Venue',
+                data: [<%= @venue_cost %>]
+            }, {
+                name: 'Photographer',
+                data: [3000]
+            }, {
+                name: 'Catering',
+                data: [7000]
+            }]
+        });
+    });
+    
+});
+
+
+</script>
+
+<div id="container" style="width:500px; height:300px;"></div>
+
+
+<!-- <svg id="slider">
+    <p id="numguests">
+        <span id="amount">50 Guests </span>
+    </p>
+</svg> -->
+
+<table class="loom">
+    <tbody>
+        <tr>
+            <td><%= link_to image_tag("barn.jpg"),inspiration_path %></td>
+            <td><%= link_to image_tag("spudbar.jpg"),inspiration_path(:category => "Food") %></td>
+            <td><%= link_to image_tag("Flowers.jpg"),inspiration_path(:category => "Flowers") %></td>
+        </tr>
+        <tr>
+            <td><%= link_to image_tag("dj.jpg"),inspiration_path(:category => "Entertainment") %></td>
+            <td><%= link_to image_tag("photographer.jpg"),inspiration_path(:category => "Photographer") %></td>
+            <td><%= link_to image_tag("wedding_dress.jpg"),inspiration_path(:category => "Dress") %></td>
+        </tr>
+</table>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
