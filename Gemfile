@@ -11,11 +11,11 @@ gem 'less'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'jquery-ui-rails'
-#gem 'libv8'
+gem 'pg'
 
 #Gems used only in development
 group :development, :test do
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'annotate'
 end
 
@@ -32,10 +32,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :production do
-	gem 'pg'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
