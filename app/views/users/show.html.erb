@@ -1,6 +1,6 @@
 <center>
 <h2>
-    Your Estimated Wedding Cost for Chicago: $<%= number_with_delimiter(3000+7000+@venue_cost, :delimiter => ',') %>
+    Your Estimated Wedding Cost for Chicago: $<%= number_with_delimiter(@wedding_cost.round(0), :delimiter => ',') %>
 </h2>
 
 <script type="text/javascript">
@@ -67,19 +67,40 @@ $(function () {
     </p>
 </svg> -->
 
-<table class="loom">
-    <tbody>
-        <tr>
-            <td><%= link_to image_tag("barn.jpg"),inspiration_path %></td>
-            <td><%= link_to image_tag("spudbar.jpg"),inspiration_path(:category => "Food") %></td>
-            <td><%= link_to image_tag("Flowers.jpg"),inspiration_path(:category => "Flowers") %></td>
-        </tr>
-        <tr>
-            <td><%= link_to image_tag("dj.jpg"),inspiration_path(:category => "Entertainment") %></td>
-            <td><%= link_to image_tag("photographer.jpg"),inspiration_path(:category => "Photographer") %></td>
-            <td><%= link_to image_tag("wedding_dress.jpg"),inspiration_path(:category => "Dress") %></td>
-        </tr>
-</table>
+</br>
+<div><center class="breakdown"
+    <h2></h2>
+    <table>
+
+        <div>
+            <tr>
+                <td><h3><%= @venue.name + " rental:  " %></h3></td>
+                <td><h3>$ <%= number_with_delimiter(@venue.rental_cost, :delimiter => ',') %></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Food: </h3></td>
+                <td><h3>$ <%= number_with_delimiter(@venue.cost_per_plate*150, :delimiter => ',') %></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Music and Entertainment: </h3></td>
+                <td><h3>$ <%= number_with_delimiter((@wedding_cost * 0.1).round(0), :delimiter => ',') %></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Wedding Attire: </h3></td>
+                <td><h3>$ <%= number_with_delimiter((@wedding_cost * 0.08).round(0), :delimiter => ',') %></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Gratuity: </h3></td>
+                <td><h3>$ <%= number_with_delimiter((@venue_cost * 0.20).round(0), :delimiter => ',') %></h3></td>
+            </tr>
+
+
+        </div>
+    </table>
+</div>
+
+</br>
+<%= link_to 'Get Inspiration', inspiration_path, :class => "btn btn-primary btn-large" %>
 
 </center>
 
