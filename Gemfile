@@ -13,6 +13,8 @@ gem 'therubyracer'
 gem 'jquery-ui-rails'
 gem 'pg'
 
+
+
 #Gems used only in development
 group :development, :test do
   #gem 'sqlite3'

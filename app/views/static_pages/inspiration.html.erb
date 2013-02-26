@@ -19,7 +19,6 @@
         <h1><%= element.name %></h1>
         <p class="lead">Rental Cost: $<%= element.rental_cost %></p>
         <p class="lead">Cost Per Plate: $<%= element.cost_per_plate %></p>
-        <p><%= element.description %></p> 
         <%= link_to("Add to Budget", user_path(user, "user[venue]" => element.id), :class => "btn btn-large btn-primary", :method => :put ) %>
 
       </div>
