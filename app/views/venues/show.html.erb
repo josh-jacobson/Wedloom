@@ -1,63 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<center>
+
+<h1>
   <%= @venue.name %>
-</p>
+</h1>
 
-<p>
-  <b>Description:</b>
+<h3>
   <%= @venue.description %>
-</p>
+</h3>
 
-<p>
-  <b>Link:</b>
-  <%= @venue.link %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @venue.image %>
-</p>
-
+<!--
 <p>
   <b>Supporting images:</b>
   <%= @venue.supporting_images %>
 </p>
 
+-->
+
 <p>
-  <b>Capacity:</b>
-  <%= @venue.capacity %>
+  <b>Maximum Capacity:</b>
+  <%= number_with_delimiter(@venue.capacity, :delimiter => ',') %>
 </p>
 
 <p>
   <b>Rental cost:</b>
-  <%= @venue.rental_cost %>
+  $<%= number_with_delimiter(@venue.rental_cost, :delimiter => ',') %>
 </p>
 
 <p>
   <b>Cost per plate:</b>
-  <%= @venue.cost_per_plate %>
+  $<%= number_with_delimiter(@venue.cost_per_plate, :delimiter => ',') %>
 </p>
 
 <p>
-  <b>Minimum:</b>
-  <%= @venue.minimum %>
+  <b>Minimum cost:</b>
+  $<%= number_with_delimiter(@venue.minimum, :delimiter => ',') %>
 </p>
 
+<!--
 <p>
   <b>Tier:</b>
   <%= @venue.tier %>
 </p>
+
+-->
 
 <p>
   <b>Tags:</b>
   <%= @venue.tags %>
 </p>
 
-
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
-
 <% user = User.find(1) %>
-<%= link_to("Add to Budget", user_path(user, "user[venue]" => @venue.id), :class => "btn btn-large btn-primary", :method => :put ) %>
+<%= link_to("Add to Loom", user_path(user, "user[venue]" => @venue.id), :class => "btn btn-large btn-primary", :method => :put ) %>
+<%= link_to("More Info", @venue.link, :class => "btn btn-large btn-primary", :target => '_blank') if @venue.link != "" %>
+</br>
+</br>
+
+<%= image_tag(@venue.image) %>
+
+</center>
