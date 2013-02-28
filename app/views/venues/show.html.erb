@@ -44,12 +44,14 @@
   <%= @venue.tier %>
 </p>
 
--->
+
 
 <p>
   <b>Tags:</b>
   <%= @venue.tags %>
 </p>
+
+-->
 
 <% user = User.find(1) %>
 <%= link_to("Add to Loom", user_path(user, "user[venue]" => @venue.id), :class => "btn btn-large btn-primary", :method => :put ) %>
