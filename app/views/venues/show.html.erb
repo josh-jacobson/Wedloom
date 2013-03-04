@@ -38,7 +38,7 @@
   $<%= number_with_delimiter(@venue.minimum, :delimiter => ',') %>
 </p>
 
-<!--
+
 <p>
   <b>Tier:</b>
   <%= @venue.tier %>
@@ -51,14 +51,20 @@
   <%= @venue.tags %>
 </p>
 
--->
 
-<% user = User.find(1) %>
-<%= link_to("Add to Loom", user_path(user, "user[venue]" => @venue.id), :class => "btn btn-large btn-primary", :method => :put ) %>
-<%= link_to("More Info", @venue.link, :class => "btn btn-large btn-primary", :target => '_blank') if @venue.link != "" %>
-</br>
-</br>
 
 <%= image_tag(@venue.image) %>
+  </br>
+</br>
+<%= link_to("Website", @venue.link, :class => "btn btn-large btn-primary", :target => '_blank') if @venue.link != "" %>
+</br>
+</br>
+    <td><%= link_to 'Edit', edit_venue_path(@venue) %></td>
+    <td><%= link_to 'Destroy', @venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Back', venues_path %></td>
+</br>
+</br>
+
+
 
 </center>
