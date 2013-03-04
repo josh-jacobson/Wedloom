@@ -11,6 +11,7 @@ Testapp::Application.routes.draw do
   get "static_pages/home"
 
   match '/about', to: 'static_pages#about'
+  match '/add', to: 'static_pages#add'
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
   match '/inspiration', to: 'static_pages#inspiration'

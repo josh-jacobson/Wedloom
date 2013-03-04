@@ -3,7 +3,7 @@
 
 %table
   %tr
-    %th Venue
+    %th id
     %th Food
     %th Flowers
     %th Entertainment
@@ -13,7 +13,7 @@
   - @users.each do |user|
     %tr
       %td 
-        = user.venue
+        = user.id
       %td 
         = user.food
       %td 
