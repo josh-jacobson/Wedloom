@@ -1,34 +1,57 @@
-<!-- hard code user for now: -->
-<% user = User.find(1) %>
-<!-- Get elements from database: -->
-<% elements = Venue.all %>
+<center><h1>Wedloom Inspiration Board</h1></center>
 
-  <div id="container">
-        <% elements.each do |element|  %>
-          <div style="margin: 5px; width: 300px;">
-            <%= link_to(image_tag(element.image), add_path(:id => element.id), :method => :put, :remote => true) %>
-          </div>
-        <% end %>
-  </div>
+<div id="container">
+  <% @venues.each do |venue|  %>
+    <div style="margin: 5px; width: 300px;">
+      <span class="roll" >
+        <center>
+        </br>
+        <%= link_to "Add to Loom", add_path(:id => venue.id), :method => :put, :remote => true, :class => "btn btn-primary btn-large addtoloom" %>
+        </center>
+      </span>
+      <%= image_tag(venue.image) %>
+    </div>
+  <% end %>
+</div>
 
-  <!-- Once the page is loaded, initalize the plug-in. -->
-  <script type="text/javascript">
+<style>
+    span.roll {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+</style>
+
+
+<script type="text/javascript">
     $(document).ready(function() {
+      
+      // Generate the grid layout using the freetile jQuery plugin
       $('#container').freetile({
         animate: true,
         elementDelay: 30
       });
 
-      $("#container a").hover(
-  function () {
-    $(this).append($("<span> Add to Your Loom</span>"));
-  },
-  function () {
-    $(this).find("span:last").remove();
-  }
-);
+      // Event handling for hovering over images: 
+      // 1. make button invisible
+      $(".roll").css("opacity","0");
+ 
+      // 2. Make button appear when mouse hovers over image
+      $(".roll").hover(function () {
+        $(this).stop().animate({opacity: 1}, "slow");
+      },
+         
+      // 3. Make button disappear when mouse leaves image
+      function () {
+          $(this).stop().animate({opacity: 0}, "slow");
+      });
+
+      // Event handling for button click
+      $(".addtoloom").click(function() {
+        alert("Added to your loom.");
+        this.parent.append('<p>Hello!</p>');
+      });
+
     });
-  </script>
-  
-</body>
-</html>
+</script>

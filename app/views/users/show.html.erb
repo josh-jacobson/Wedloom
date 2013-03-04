@@ -1,6 +1,6 @@
 <center>
 
-<h1>Your Loom: <%= @user.venues.count %> venues</h1>
+<h1>Your Loom</h1>
 
 
   <div id="tileContainer">
@@ -12,9 +12,10 @@
   </div>
 
 <h2>
-    Estimated Wedding Cost for Chicago: 
+    Estimated Wedding Cost: 
     $<%= number_with_delimiter(@wedding_cost.round(0), :delimiter => ',') %>
 </h2>
+<h3>(based on real data for Chicago)</h3>
 
 <script type="text/javascript">
 
@@ -123,6 +124,6 @@ $(function () {
 -->
 
 </br>
-<%= link_to 'Get Inspiration', inspiration_path, :class => "btn btn-primary btn-large" %>
-
+<%= link_to 'Connect', refine_path, :class => "btn btn-primary btn-large" %>
+</br>
 </center>

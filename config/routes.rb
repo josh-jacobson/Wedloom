@@ -18,6 +18,7 @@ Testapp::Application.routes.draw do
   match '/canvas', to: 'static_pages#canvas'
   match '/home', to: 'static_pages#home'
   match '/refine', to: 'static_pages#refine'
+  match '/planner', to: 'static_pages#planner'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
