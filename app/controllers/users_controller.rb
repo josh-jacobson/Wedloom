@@ -15,8 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @venues = @user.venues
-    @venue = @venues.first
-    @venue_cost = @venue.rental_cost + (@venue.cost_per_plate * 150)
+    @venue_cost = @venues.map(&:rental_cost).inject(0, &:+) / @venues.length + @venues.map(&:cost_per_plate).inject(0, &:+) *150/@venues.length
     @wedding_cost = @venue_cost / 0.4
 
     respond_to do |format|
