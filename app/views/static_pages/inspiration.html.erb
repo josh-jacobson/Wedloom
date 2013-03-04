@@ -1,14 +1,12 @@
 <!-- hard code user for now: -->
-
-
-<!-- Get elements from database: -->
 <% user = User.find(1) %>
+<!-- Get elements from database: -->
 <% elements = Venue.all %>
 
   <div id="container">
         <% elements.each do |element|  %>
           <div style="margin: 5px; width: 300px;">
-            <%= link_to(image_tag(element.image), user_path(user, "user[venue]" => element.id), :method => :put, :remote => :true) %>
+            <%= link_to(image_tag(element.image), add_path(:id => element.id), :method => :put, :remote => true) %>
           </div>
         <% end %>
   </div>
@@ -20,6 +18,15 @@
         animate: true,
         elementDelay: 30
       });
+
+      $("#container a").hover(
+  function () {
+    $(this).append($("<span> Add to Your Loom</span>"));
+  },
+  function () {
+    $(this).find("span:last").remove();
+  }
+);
     });
   </script>
   
