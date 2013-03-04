@@ -1,5 +1,8 @@
 Testapp::Application.routes.draw do
 
+  resources :tips
+
+
   resources :venues
 
 
