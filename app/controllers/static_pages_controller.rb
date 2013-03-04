@@ -17,4 +17,8 @@ class StaticPagesController < ApplicationController
 
   def canvas
   end
+
+  def refine
+  end
+  
 end
