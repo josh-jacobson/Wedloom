@@ -6,7 +6,7 @@
   <div id="tileContainer">
         <% @venues.each do |venue|  %>
           <div style="margin: 5px; width: 200px;">
-            <%= image_tag(venue.image) %>
+            <%= link_to image_tag(venue.image), remove_path(:id => venue), :remote => true %>
           </div>
         <% end %>
   </div>
@@ -80,21 +80,15 @@ $(function () {
     
 });
 
-
 </script>
+</br>
+<%= link_to 'Get More Inspiration', inspiration_path, :class => "btn btn-primary btn-large" %>
+</br>
 
 <div id="container" style="width: 90%;"></div>
 
+<div class="span12">
+    </br>
 
-<!-- <svg id="slider">
-    <p id="numguests">
-        <span id="amount">50 Guests </span>
-    </p>
-</svg> -->
-
-</br>
-
-</br>
-
-</br>
+</div>
 </center>
