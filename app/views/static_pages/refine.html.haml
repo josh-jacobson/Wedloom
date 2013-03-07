@@ -1,81 +1,79 @@
-.container
-	.when.padd
-	%br
-	%h1 Help us learn more about you by answering a few questions.
+%center
+	%h1 
+		Connect with a 
+		= image_tag("logo.jpg", :width => "190px")
+		planner.
+	%h3 We'll use this information to match you up with the perfect planner to help turn your vision into a reality.
 	%hr
-	%br
-		%center
-			%h2 Which month will your wedding be?
-			%select
-				%option January
-				%option February
-				%option March
-				%option April
-				%option May
-				%option June
-				%option July
-				%option August
-				%option September
-				%option October
-				%option November
-				%option December
-		.where.padd
-		%center
-			%h2 Which day of the week do you prefer?
-			%select
-				%option Friday
-				%option Saturday
-				%option Sunday
-
-		%center
-			%h2 What's your budget, roughly?
-			%input{:type => "text", :placeholder => "(Optional)"}
-		%center
-		.roughnum
-		%center	
-			%h2 About how many guests?
-			%input{:type => "text", :placeholder => "# of Guests"}
-		%center	
-			%hr
-			%h2 On a scale of 1-5 (1 being most important), how important are the following:
-			%h3 Venue
-			%select
-				%option 1
-				%option 2
-				%option 3
-				%option 4
-				%option 5
-			%h3 Food
-			%select
-				%option 1
-				%option 2
-				%option 3
-				%option 4
-				%option 5
-			%h3 Photographer
-			%select
-				%option 1
-				%option 2
-				%option 3
-				%option 4
-				%option 5
-			%h3 Band / DJ
-			%select
-				%option 1
-				%option 2
-				%option 3
-				%option 4
-				%option 5
-	%a
-		%center
-			= link_to 'Make it happen', planner_path, :class => "btn btn-primary btn-large"
-	%br
-	%br
-	%br
-	%br
-	%br
-	%br
-	%br
-	%br
+	%h3 Which month will your wedding be?
+	%select
+		%option January
+		%option February
+		%option March
+		%option April
+		%option May
+		%option June
+		%option July
+		%option August
+		%option September
+		%option October
+		%option November
+		%option December
+	%h3 Which day of the week do you prefer?
+	%select
+		%option Friday
+		%option Saturday
+		%option Sunday
+	%h3 What's your budget, roughly?
+	%input{:type => "text", :placeholder => "(Optional)"}
+	%h3 About how many guests?
+	%input{:type => "text", :placeholder => "# of Guests"}
 	%hr
+	%h3 How important are the following to you?
+	%h3 
+		Venue
+	%select
+		%option
+		%option 5 - Priority
+		%option 4 - Important
+		%option 3 - Average
+		%option 2 - Less Important
+		%option 1 - Not a priority
+	%h3 
+		Food
+	%select
+		%option
+		%option 5 - Priority
+		%option 4 - Important
+		%option 3 - Average
+		%option 2 - Less Important
+		%option 1 - Not a priority
+	%h3 
+		Photographer
+	%select
+		%option
+		%option 5 - Priority
+		%option 4 - Important
+		%option 3 - Average
+		%option 2 - Less Important
+		%option 1 - Not a priority
+	%h3 Band / DJ
+	%select
+		%option
+		%option 5 - Priority
+		%option 4 - Important
+		%option 3 - Average
+		%option 2 - Less Important
+		%option 1 - Not a priority
+	%h3 Flowers and Decorations
+	%select
+		%option
+		%option 5 - Priority
+		%option 4 - Important
+		%option 3 - Average
+		%option 2 - Less Important
+		%option 1 - Not a priority
+	%br
+	%br
+	= link_to 'Match Me with a Planner', planner_path, :class => "btn btn-primary btn-large"
 

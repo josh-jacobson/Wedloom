@@ -5,6 +5,11 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def remove
+    @user = User.find(1)
+    @user.venues.delete(Venue.find(params[:id]))
+  end
+
   def add
     @user = User.find(1)
     @user.venues << Venue.find(params[:id])

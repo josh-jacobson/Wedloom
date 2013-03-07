@@ -1,10 +1,8 @@
 Testapp::Application.routes.draw do
 
+  resources :tips
   resources :venues
-
-
   resources :elements
-
   resources :users
   root :to => 'static_pages#home'
   
@@ -12,6 +10,7 @@ Testapp::Application.routes.draw do
 
   match '/about', to: 'static_pages#about'
   match '/add', to: 'static_pages#add'
+  match '/remove', to: 'static_pages#remove'
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
   match '/inspiration', to: 'static_pages#inspiration'

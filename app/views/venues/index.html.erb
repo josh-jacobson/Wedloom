@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>id</th>
     <th>Name</th>
     <th>Description</th>
     <th>Link</th>
@@ -20,6 +21,7 @@
 
 <% @venues.each do |venue| %>
   <tr>
+    <td><%= venue.id %></td>
     <td><%= venue.name %></td>
     <td><%= venue.description %></td>
     <td><%= venue.link %></td>
