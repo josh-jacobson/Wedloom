@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>id</th>
     <th>Category</th>
     <th>Name</th>
     <th>Fixed cost</th>
@@ -17,6 +18,7 @@
 
 <% @elements.each do |element| %>
   <tr>
+    <td><%= element.id %></td>
     <td><%= element.category %></td>
     <td><%= element.name %></td>
     <td><%= element.fixed_cost %></td>
