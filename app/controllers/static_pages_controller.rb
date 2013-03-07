@@ -25,6 +25,7 @@ class StaticPagesController < ApplicationController
   def inspiration
     @user = User.find(1)
     @venues = Venue.all
+    @elements = Element.all
   end
 
   def canvas

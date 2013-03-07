@@ -16,4 +16,20 @@
       <%= image_tag(venue.image) %>
     </div>
   <% end %>
+
+
+
+  <% @elements.each do |element|  %>
+    <div style="margin: 5px; width: 300px;">
+      <span class="roll" >
+        <center>
+        </br>
+        <%= link_to "Add to Loom", "#", :class => "btn btn-primary btn-large addtoloom" %>
+        </center>
+      </span>
+      <%= image_tag(element.image) %>
+    </div>
+  <% end %>
+
+
 </div>
