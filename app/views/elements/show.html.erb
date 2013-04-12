@@ -1,47 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<center>
+
 <%= image_tag(@element.image) %>
 
-<p>
-  <b>Category:</b>
-  <%= @element.category %>
-</p>
-
-<p>
-  <b>Name:</b>
+<h1>
+  <b><%= @element.category %>:</b>
   <%= @element.name %>
-</p>
+</h1>
 
-<p>
-  <b>Fixed cost:</b>
-  <%= @element.fixed_cost %>
-</p>
+<h3>
+  <%= @element.description %>
+</h3>
 
+<h4>
+  <b>Estimated cost:</b>
+  $<%= number_with_delimiter(@element.fixed_cost, :delimiter => ',') %>
+</h4>
+
+<!--
 <p>
   <b>Variable cost:</b>
   <%= @element.variable_cost %>
 </p>
-
-<p>
-  <b>Description:</b>
-  <%= @element.description %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @element.image %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%= @element.link %>
-</p>
-
-<p>
-  <b>Tier:</b>
-  <%= @element.tier %>
-</p>
-
-
+-->
+</br>
+<%= link_to "Add to Loom", "#", :class => "btn btn-primary btn-large addtoloom" %>
+<%= link_to("Visit Website", @element.link, :class => "btn btn-large btn-primary", :target => '_blank') if @element.link != "" %>
+</br></br>
+<!--
 <%= link_to 'Edit', edit_element_path(@element) %> |
 <%= link_to 'Back', elements_path %>
+-->
+
+</center>

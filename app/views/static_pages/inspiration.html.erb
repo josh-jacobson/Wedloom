@@ -11,6 +11,9 @@
         <center>
         </br>
         <%= link_to "Add to Loom", add_path(:id => venue.id), :method => :put, :remote => true, :class => "btn btn-primary btn-large addtoloom" %>
+        </br></br>
+        <%= link_to "More Info", venue_path(:id => venue.id), :class => "btn btn-primary btn-large" %>
+        
         </center>
       </span>
       <%= image_tag(venue.image) %>
@@ -25,6 +28,8 @@
         <center>
         </br>
         <%= link_to "Add to Loom", "#", :class => "btn btn-primary btn-large addtoloom" %>
+        </br></br>
+        <%= link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary btn-large" %>
         </center>
       </span>
       <%= image_tag(element.image) %>
