@@ -11,8 +11,8 @@ Testapp::Application.routes.draw do
   get "static_pages/home"
 
   match '/about', to: 'static_pages#about'
-  match '/add', to: 'static_pages#add'
-  match '/remove', to: 'static_pages#remove'
+  match '/add', to: 'customer#add'
+  match '/remove', to: 'customer#remove'
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
   match '/inspiration', to: 'static_pages#inspiration'
@@ -20,7 +20,7 @@ Testapp::Application.routes.draw do
   match '/home', to: 'static_pages#home'
   match '/refine', to: 'static_pages#refine'
   match '/planner', to: 'static_pages#planner'
-  match '/loom', to: 'static_pages#loom'
+  match '/loom', to: 'customer#loom'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
