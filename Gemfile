@@ -12,6 +12,7 @@ gem 'less-rails'
 gem 'therubyracer'
 gem 'jquery-ui-rails'
 gem 'pg'
+gem 'devise'
 
 
 

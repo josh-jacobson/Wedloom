@@ -1,5 +1,7 @@
 Testapp::Application.routes.draw do
 
+  devise_for :customers
+
   resources :tips
   resources :venues
   resources :elements
