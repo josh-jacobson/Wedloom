@@ -23,7 +23,6 @@
       // Event handling for button click
       $(".addtoloom").click(function() {
         alert("Added to your loom.");
-        this.parent.append('<p>Hello!</p>');
       });
 
     });
