@@ -9,18 +9,60 @@
       <%= image_tag("couple3.jpg", :width => "100%") %>
       
       </br>
-        <center><h1> The wedding of your dreams, within reach. </h1></center>
-</br>
+        <center><h1> Wedloom helps you find local wedding vendors that fit your style and budget. 
+        </h1></center>
+      </br>
  
-    <center><%= button_to 'Get Started!', inspiration_path, :class => 'btn btn-large btn-primary' %></center>
+    <center><%= button_to 'Learn More', inspiration_path, :class => 'btn btn-large btn-primary' %></center>
   
       <!--  <center><h3>Recently engaged? Congrats! Wedloom will help you figure out one of the hardest parts of planning a wedding: the budget. Browse through different options and their estimated price ranges so you can better understand the tradeoffs to stay within your budget.</h3></center> -->
+      </br>
+      </br>
       
-        </body>
-        <center><%= image_tag("homestrip.png", :width => "100%") %></center>
+        
+        <!-- <center><%= image_tag("homestrip.png", :width => "100%") %></center> -->
+  
+      <ul class="thumbnails", >
+      
+      <li class="span4">
+        <!-- <div class="thumbnail", border:none;> -->
+          <center>
+            <%= image_tag("lightbulb.svg", :width => "20%") %>
+            <h3>Get inspired</h3>
+            <p>Browse pictures to get ideas and create a vision for your dream wedding</p>
+            <%= link_to 'Learn More', inspiration_path %>
+          </center>
+       <!--  </div> -->
+      </li>
+    
+      <li class="span4">
+        <!-- <div class="thumbnail"> -->
+        <center>
+          <%= image_tag("moneybag.svg", :width => "20%") %>
+          <h3>Stay within budget</h3>
+          <p>View price information from real weddings to help you figure out what’s within reach</p>
+          <%= link_to 'Learn More', inspiration_path %>
+        </center>
+       <!--  </div> -->
+      </li>
+      
+      <li class="span4">
+        <!-- <div class="thumbnail"> -->
+          <center>
+            <%= image_tag("pindrop.svg", :width => "20%") %>
+            <h3>Find local options</h3>
+            <p>Find real venues, photographers, florists, etc. in your area so you can start making it happen</p>
+            <%= link_to 'Learn More', inspiration_path %>
+          </center>
+       <!--  </div> -->
+      </li>
+    
+    </ul>
+   
+
         <hr>
 
-
+</body>
 
    <script type="text/javascript">
 
