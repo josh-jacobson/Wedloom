@@ -7,7 +7,7 @@ Testapp::Application.routes.draw do
   resources :elements
   resources :users
   root :to => 'static_pages#home'
-  
+
   get "static_pages/home"
 
   match '/about', to: 'static_pages#about'
@@ -21,6 +21,8 @@ Testapp::Application.routes.draw do
   match '/refine', to: 'static_pages#refine'
   match '/planner', to: 'static_pages#planner'
   match '/loom', to: 'customer#loom'
+  match '/signup', to: 'static_pages#signup'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

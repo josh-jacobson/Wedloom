@@ -43,5 +43,8 @@ class StaticPagesController < ApplicationController
 
   def planner
   end
-  
+
+  def signup
+  end
+
 end
