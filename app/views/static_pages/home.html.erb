@@ -2,63 +2,63 @@
 	<head>
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
     <script src="//cdn.optimizely.com/js/214010495.js"></script>
+    <title> Wedloom | Your Personal Online Wedding Planner </title>
+    <meta name="description" content="Wedloom will help guide you through the wedding planning process with its online tools and online consultations with a real wedding planner"> <meta charset="UTF-8">
   </head>
 
 	<body>
-   
+
       <%= image_tag("couple3.jpg", :width => "100%") %>
-      
+
       </br>
         <center>
           <h1 class="title1"> Find local wedding vendors that fit your style and budget.</h1>
         </center>
       </br>
- 
+
     <center><%= button_to 'Learn More', signup_path, :class => 'btn btn-large btn-primary' %></center>
-  
+
       <!--  <center><h3>Recently engaged? Congrats! Wedloom will help you figure out one of the hardest parts of planning a wedding: the budget. Browse through different options and their estimated price ranges so you can better understand the tradeoffs to stay within your budget.</h3></center> -->
       </br>
       </br>
 
-     
-  
-      <ul class="thumbnails">
-      
-        <li class="span4">
-          <!-- <div class="thumbnail", border:none;> -->
-            <center>
-              <%= image_tag("lightbulb.svg", :width => "20%") %>
-              <h3>Get inspired</h3>
-              <p>Browse pictures to get ideas and create a vision for your dream wedding</p>
-              <%= link_to 'Learn More', signup_path %>
-            </center>
-         <!--  </div> -->
-        </li>
-      
-        <li class="span4">
-          <!-- <div class="thumbnail"> -->
-          <center>
-            <%= image_tag("moneybag.svg", :width => "20%") %>
-            <h3>Stay within budget</h3>
-            <p>View price information from real weddings to help you figure out what’s within reach</p>
-            <%= link_to 'Learn More', signup_path %>
-          </center>
-         <!--  </div> -->
-        </li>
-        
-        <li class="span4">
-          <!-- <div class="thumbnail"> -->
-            <center>
-              <%= image_tag("pindrop.svg", :width => "20%") %>
-              <h3>Find local options</h3>
-              <p>Find real venues, photographers, florists, etc. in your area so you can start making it happen</p>
-              <%= link_to 'Learn More', signup_path %>
-            </center>
-         <!--  </div> -->
-        </li>
-    
-    </ul>
-   
+
+
+       <table>
+            <thead>
+                <th colspan="3"></th>
+            </thead>
+            <tablebody>
+
+                <tr>
+                    <td>
+                      <%= image_tag("lightbulb.svg", :width => "20%") %>
+                     <h3>Get inspired</h3>
+                      <p>Browse pictures to get ideas and create a vision for your dream wedding</p>
+                      <%= link_to 'Learn More', inspiration_path %>
+                    </td>
+
+                    <td>
+                      <center><%= image_tag("moneybag.svg", :width => "20%") %>
+                      <h3>Stay within budget</h3>
+                      <p>View price information from real weddings to help you figure out what’s within reach</p>
+                      <%= link_to 'Learn More', inspiration_path %></center>
+
+                    </td>
+                     <td>
+
+                      <center><%= image_tag("pindrop.svg", :width => "20%") %></center>
+                      <center><h3>Find local options</h3>
+                      <p>Find real venues, photographers, florists, etc. in your area so you can start making it happen</p>
+                      <%= link_to 'Learn More', inspiration_path %></center>
+                     </td>
+
+              </center>
+                </tr>
+            </tablebody>
+        </table>
+
+
 
         <hr>
 
@@ -79,5 +79,5 @@
   })();
 
 </script>
-     
+
   </html>
