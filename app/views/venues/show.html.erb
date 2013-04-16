@@ -24,12 +24,12 @@
 </p>
 
 <p>
-  <b>Rental cost:</b>
+  <b>Estimated Rental cost:</b>
   $<%= number_with_delimiter(@venue.rental_cost, :delimiter => ',') %>
 </p>
 
 <p>
-  <b>Cost per plate:</b>
+  <b>Estimated Cost per plate:</b>
   $<%= number_with_delimiter(@venue.cost_per_plate, :delimiter => ',') %>
 </p>
 
@@ -38,7 +38,7 @@
   $<%= number_with_delimiter(@venue.minimum, :delimiter => ',') %>
 </p>
 
-
+<!--
 <p>
   <b>Tier:</b>
   <%= @venue.tier %>
@@ -50,20 +50,25 @@
   <b>Tags:</b>
   <%= @venue.tags %>
 </p>
-
+-->
 
 
 <%= image_tag(@venue.image) %>
   </br>
 </br>
-<%= link_to("Website", @venue.link, :class => "btn btn-large btn-primary", :target => '_blank') if @venue.link != "" %>
+<%= link_to "Add to Loom", add_path(:id => @venue.id), :method => :put, :remote => true, :class => "btn btn-primary btn-large addtoloom" %>
+<%= link_to("Visit Website", @venue.link, :class => "btn btn-large btn-primary", :target => '_blank') if @venue.link != "" %>
 </br>
+
+<!--
 </br>
     <td><%= link_to 'Edit', edit_venue_path(@venue) %></td>
     <td><%= link_to 'Destroy', @venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <td><%= link_to 'Back', venues_path %></td>
 </br>
 </br>
+
+-->
 
 
 
