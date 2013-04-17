@@ -2,6 +2,9 @@ class StaticPagesController < ApplicationController
   def home
   end
 
+  def homeplanner
+  end
+
   def about
   end
 

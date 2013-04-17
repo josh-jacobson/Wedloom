@@ -10,6 +10,7 @@ Testapp::Application.routes.draw do
 
   get "static_pages/home"
 
+
   match '/about', to: 'static_pages#about'
   match '/add', to: 'customer#add'
   match '/remove', to: 'customer#remove'
@@ -22,7 +23,7 @@ Testapp::Application.routes.draw do
   match '/planner', to: 'static_pages#planner'
   match '/loom', to: 'customer#loom'
   match '/signup', to: 'static_pages#signup'
-
+  match '/homeplanner', to: 'static_pages#homeplanner'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
