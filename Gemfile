@@ -6,10 +6,11 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'haml'
-gem 'twitter-bootstrap-rails'
-gem 'less'
-gem 'less-rails'
-gem 'therubyracer'
+gem 'bootstrap-sass'
+#gem 'twitter-bootstrap-rails'
+#gem 'less'
+#gem 'less-rails'
+#gem 'therubyracer'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'devise'
@@ -18,7 +19,6 @@ gem 'devise'
 
 #Gems used only in development
 group :development, :test do
-  #gem 'sqlite3'
   gem 'annotate'
 end
 
