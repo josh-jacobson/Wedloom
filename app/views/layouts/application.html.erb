@@ -17,37 +17,50 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="../">Wedloom</a>
+        <a class="brand" href="../"><%= image_tag("logo.jpg", :width => "100px") %></a>
         <div class="nav-collapse">
-          <ul class="nav">
+          <ul class="nav pull-left">
             <li><%= link_to "Inspiration Board", inspiration_path %></li>
             <li><%= link_to "Your Loom", loom_path %></li>
             <li><%= link_to "Connect", refine_path %></li>
+
+            <li>
+
           </ul>
+
+          <ul class="nav pull-right">
+            <% if customer_signed_in? %>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_customer.email%> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">My Profile</a></li>
+                  <li><a href="#">Account</a></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Sign out", destroy_customer_session_path, :method => :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Login", new_customer_session_path %></li>
+                  <li><%= link_to "Sign up", new_customer_registration_path %></li>
+                </ul>
+              </li>
+            <% end %>
+            </ul>
         </div>
       </div>
     </div>
   </div>
 
-   <div id="customer_nav">
-    <% if customer_signed_in? %>
-      Signed in as <%= current_customer.email %>. Not you?
-      <%= link_to "Sign out", destroy_customer_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_customer_registration_path %> or <%= link_to "sign in", new_customer_session_path %>
-    <% end %>
-  </div>
 <!--
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 -->
 
 <%= yield %>
-
-   <!--    <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Wedloom, Inc.    &middot;    Email us at wedloom@gmail.com.  </p>
-      </footer> -->
 
 
 </body>
