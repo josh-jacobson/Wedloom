@@ -10,4 +10,7 @@ class Customer < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_and_belongs_to_many :venues
+
+  has_many :loomelements
+  has_many :elements, :through => :loomelements
 end

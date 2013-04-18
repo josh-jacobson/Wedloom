@@ -14,6 +14,9 @@ Testapp::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/add', to: 'customer#add'
   match '/remove', to: 'customer#remove'
+  match '/add_element', to: 'customer#add_element'
+  match '/remove_element', to: 'customer#remove_element'
+
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
   match '/inspiration', to: 'static_pages#inspiration'

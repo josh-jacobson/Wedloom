@@ -18,10 +18,8 @@
                 = current_customer.email
                 %b.caret
               %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} My Profile
-                %li
-                  %a{:href => "#"} Account
+                %li= link_to "Loom", loom_path
+                %li= link_to "Edit Profile", edit_customer_registration_path
                 %li.divider
                 %li= link_to "Sign out", destroy_customer_session_path, :method => :delete
                 
