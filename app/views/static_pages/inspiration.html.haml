@@ -10,8 +10,8 @@
     %h3#myModalLabel Added to your loom.
   .modal-body
   .modal-footer
-/    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Okay
-/   %button.btn.btn-primary Confirm
+    = link_to "View Loom", loom_path, :class => "btn btn-primary"
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
 
 %div#container
   - @venues.each do |venue|
