@@ -3,13 +3,23 @@
   %h3 Pick the images that match your ideal wedding and add them to Your Loom.
 %hr
 
+/ Modal
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Added to your loom.
+  .modal-body
+  .modal-footer
+/    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Okay
+/   %button.btn.btn-primary Confirm
+
 %div#container
   - @venues.each do |venue|
     %div{ style: "margin: 5px; width: 300px;"}
       %span.roll
         %center
           %br
-          = link_to "Add to Loom", add_path(:id => venue.id), :method => :put, :remote => true, :class => "btn btn-primary btn-large addtoloom"
+          = link_to "Add to Loom", add_path(:id => venue.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-primary btn-large"
           %br
           %br
           = link_to "More Info", venue_path(:id => venue.id), :class => "btn btn-primary btn-large"
@@ -23,7 +33,7 @@
       %span.roll
         %center
           %br
-          = link_to "Add to Loom", add_element_path(:id => element.id), :method => :put, :remote => true, :class => "btn btn-primary btn-large addtoloom"
+          = link_to "Add to Loom", add_element_path(:id => element.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-primary btn-large addtoloom"
           %br
           %br
           = link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary btn-large"

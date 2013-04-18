@@ -22,7 +22,9 @@
 
       // Event handling for button click
       $(".addtoloom").click(function() {
-        alert("Added to your loom.");
+
       });
+
+      $(".alert").alert()
 
     });
