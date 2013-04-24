@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'devise'
+gem 'will_paginate'
 
 
 

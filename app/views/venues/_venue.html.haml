@@ -1,0 +1,9 @@
+%div{ style: "margin: 5px; width: 300px;"}
+  %span.roll
+    %center
+      %br
+      = link_to "Add to Loom", add_path(:id => venue.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-primary btn-large"
+      %br
+      %br
+      = link_to "More Info", venue_path(:id => venue.id), :class => "btn btn-primary btn-large"
+  = image_tag(venue.image)
