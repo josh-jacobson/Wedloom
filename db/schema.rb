@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417232615) do
+ActiveRecord::Schema.define(:version => 20130424212755) do
 
   create_table "customers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(:version => 20130417232615) do
     t.integer  "tier"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "capacity"
+    t.integer  "minimum"
+    t.string   "tags"
   end
 
   create_table "loomelements", :force => true do |t|

@@ -1,4 +1,5 @@
 <h1>Listing elements</h1>
+<%= link_to 'New Element', new_element_path %>
 
 <table>
   <tr>
@@ -11,6 +12,9 @@
     <th>Image</th>
     <th>Link</th>
     <th>Tier</th>
+    <th>Capacity</th>
+    <th>Minimum</th>
+    <th>Tags</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,6 +31,9 @@
     <td><%= element.image %></td>
     <td><%= element.link %></td>
     <td><%= element.tier %></td>
+    <td><%= element.capacity %></td>
+    <td><%= element.minimum %></td>
+    <td><%= element.tags %></td>
     <td><%= link_to 'Show', element %></td>
     <td><%= link_to 'Edit', edit_element_path(element) %></td>
     <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
