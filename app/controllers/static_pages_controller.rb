@@ -13,8 +13,8 @@ class StaticPagesController < ApplicationController
   end
 
   def inspiration
-    @venues = Venue.paginate(:page => params[:page], :per_page => 5)
-    @elements = Element.paginate(:page => params[:page], :per_page => 5)
+    @venues = Venue.paginate(:page => params[:page], :per_page => 15)
+    @elements = Element.paginate(:page => params[:page], :per_page => 15)
   end
 
   def canvas
