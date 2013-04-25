@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
     if params[:category] == "venues"
       @elements = Element.where(:category => "Venue").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "dresses"
-      @dresses = Element.where(:category => "Dress").paginate(:page => params[:page], :per_page => 15)
+      @elements = Element.where(:category => "Dress").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "invitations"
       @elements = Element.where(:category => "Invitations").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "flowers"
