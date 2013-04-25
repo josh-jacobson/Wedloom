@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425031255) do
+ActiveRecord::Schema.define(:version => 20130425041235) do
 
   create_table "customers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(:version => 20130425031255) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
+    t.text     "description"
+    t.string   "photo"
+    t.string   "website"
   end
 
   add_index "planners", ["email"], :name => "index_planners_on_email", :unique => true

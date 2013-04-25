@@ -1,6 +1,7 @@
 %center
   %h1 Inspiration Board
-  %h3 Pick the images that match your ideal wedding and add them to your Loom.
+  %h3 Build your Loom by adding the images that best match your style.
+  / Category choices
   = link_to "Venues", {:controller => "static_pages", :action => "inspiration", :category => "venues"}, :class => "btn btn-primary"
   = link_to "Dresses", {:controller => "static_pages", :action => "inspiration", :category => "dresses"}, :class => "btn btn-primary"
   = link_to "Invitations", {:controller => "static_pages", :action => "inspiration", :category => "invitations"}, :class => "btn btn-primary"
@@ -8,18 +9,18 @@
   = link_to "Style", {:controller => "static_pages", :action => "inspiration", :category => "style"}, :class => "btn btn-primary"
 %hr
 
-/Modal
+/"Added to your loom" Bootstrap modal
 #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-header
     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-    %h3#myModalLabel Added to loom.
+    %h3#myModalLabel Added to your loom.
   .modal-body
   .modal-footer
     = link_to "View Loom", loom_path, :class => "btn btn-primary"
     %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
 
+/ Inspiration board photos
 %div#container
-  /= render :partial => @dresses
 
   - @elements.each do |element|
     %div{ style: "margin: 5px; width: 300px;"}

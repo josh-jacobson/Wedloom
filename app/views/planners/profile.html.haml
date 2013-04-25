@@ -1,0 +1,20 @@
+%center
+	%h1
+		=@planner.name
+		's Profile
+	%hr
+
+	%h4
+		= @planner.description
+
+	= image_tag @planner.photo if @planner.photo?
+	%br
+	%br
+
+	=link_to("Website", @planner.website, :class => "btn btn-large btn-primary", :target => '_blank') if @planner.website?
+	%br
+	%br
+	=link_to 'Edit Profile', edit_planner_path(@planner), :class => "btn btn-primary btn-large"
+
+	%hr
+	%h2 My Clients:

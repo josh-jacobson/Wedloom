@@ -1,10 +1,27 @@
-class PlannerController < ApplicationController
+class PlannersController < ApplicationController
 	before_filter :authenticate_planner!
 
   def profile
     @planner = current_planner
   end
   
+  def edit
+    @planner = current_planner
+  end
+  def update
+    @planner = current_planner
+
+    respond_to do |format|
+      if @planner.update_attributes(params[:planner])
+        format.html { redirect_to profile_path, notice: 'Your profile was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @planner.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def add
     @planner = current_planner
     @planner.venues << Venue.find(params[:id])
@@ -25,14 +42,6 @@ class PlannerController < ApplicationController
     @planner = current_planner
     @planner.elements.delete(Element.find(params[:id]))
     redirect_to loom_path
-  end
-
-  def loom
-    @planner = current_planner
-    @venues = @planner.venues
-    @elements = @planner.elements
-    @venue_cost = (@venues.size == 0) ? 10000 : @venues.map(&:rental_cost).inject(0, &:+) / @venues.length + @venues.map(&:cost_per_plate).inject(0, &:+) *150/@venues.length
-    @wedding_cost = @venue_cost / 0.4
   end
 
 end
