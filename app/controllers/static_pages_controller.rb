@@ -13,24 +13,18 @@ class StaticPagesController < ApplicationController
   end
 
   def inspiration
-    @venues = Element.where(:category => "Venue").paginate(:page => params[:page], :per_page => 5)
-    @dresses = Element.where(:category => "Dress").paginate(:page => params[:page], :per_page => 5)
-    @invitations = Element.where(:category => "Invitations").paginate(:page => params[:page], :per_page => 5)
-    @flowers = Element.where(:category => "Floral/Decor").paginate(:page => params[:page], :per_page => 5)
-    @style = Element.where(:category => "Style").paginate(:page => params[:page], :per_page => 5)
-
     if params[:category] == "venues"
-      @elements = @venues 
+      @elements = Element.where(:category => "Venue").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "dresses"
-      @elements = @dresses
+      @dresses = Element.where(:category => "Dress").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "invitations"
-      @elements = @invitations
+      @elements = Element.where(:category => "Invitations").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "flowers"
-      @elements = @flowers
+      @elements = Element.where(:category => "Floral/Decor").paginate(:page => params[:page], :per_page => 15)
     elsif params[:category] == "style"
-      @elements = @style
+      @elements = Element.where(:category => "Style").paginate(:page => params[:page], :per_page => 15)
     else
-      @elements = @venues
+      @elements = Element.paginate(:page => params[:page], :per_page => 15)
     end
 
   end
