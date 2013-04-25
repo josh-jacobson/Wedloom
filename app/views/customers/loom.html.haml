@@ -1,0 +1,30 @@
+%center
+  %h1 My Loom
+  = link_to 'Connect with a Wedloom planner', refine_path, :class => "btn btn-primary btn-large"
+  %hr
+  #tileContainer
+    - @elements.each do |element|
+      %div{:style => "margin: 5px; width: 300px;"}
+        %span.roll
+          %center
+            = link_to "Remove", remove_element_path(:id => element.id), :class => "btn btn-primary"
+            %br
+            %br
+            = link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary"
+        = link_to image_tag(element.image), remove_element_path(:id => element)
+
+  = link_to 'Get More Inspiration', inspiration_path, :class => "btn btn-primary btn-large"
+  %h2 Profile
+  %h4
+    %b Name:
+    = @customer.name
+  %h4
+    %b Wedding Date:
+    = @customer.wedding_date
+  %h4
+    %b Budget:
+    $#{number_with_delimiter(@customer.budget, :delimiter => ',')}
+  %h4
+    %b Number of Guests:
+    = @customer.number_of_guests
+  = link_to 'Edit Profile', edit_customer_path(@customer), :class => "btn btn-primary btn-large"
