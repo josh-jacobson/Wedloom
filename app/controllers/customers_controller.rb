@@ -1,6 +1,22 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
 	before_filter :authenticate_customer!
 
+  def edit
+    @customer = current_customer
+  end
+  def update
+    @customer = current_customer
+
+    respond_to do |format|
+      if @customer.update_attributes(params[:customer])
+        format.html { redirect_to loom_path, notice: 'Your profile was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @customer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   def add
     @customer = current_customer
     @customer.venues << Venue.find(params[:id])

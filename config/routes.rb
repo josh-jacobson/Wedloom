@@ -3,6 +3,7 @@ Testapp::Application.routes.draw do
   devise_for :planners
   devise_for :customers
 
+  resources :customers
   resources :tips
   resources :venues
   resources :elements
@@ -13,10 +14,10 @@ Testapp::Application.routes.draw do
 
 
   match '/about', to: 'static_pages#about'
-  match '/add', to: 'customer#add'
-  match '/remove', to: 'customer#remove'
-  match '/add_element', to: 'customer#add_element'
-  match '/remove_element', to: 'customer#remove_element'
+  match '/add', to: 'customers#add'
+  match '/remove', to: 'customers#remove'
+  match '/add_element', to: 'customers#add_element'
+  match '/remove_element', to: 'customers#remove_element'
 
   match '/budget', to: 'static_pages#budget'
   match '/carousel', to: 'static_pages#carousel'
@@ -25,7 +26,7 @@ Testapp::Application.routes.draw do
   match '/home', to: 'static_pages#home'
   match '/refine', to: 'static_pages#refine'
   match '/planner', to: 'static_pages#planner'
-  match '/loom', to: 'customer#loom'
+  match '/loom', to: 'customers#loom'
   match '/signup', to: 'static_pages#signup'
   match '/homeplanner', to: 'static_pages#homeplanner'
 
