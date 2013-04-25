@@ -1,5 +1,6 @@
 Testapp::Application.routes.draw do
 
+  devise_for :planners
   devise_for :customers
 
   resources :tips
@@ -27,6 +28,9 @@ Testapp::Application.routes.draw do
   match '/loom', to: 'customer#loom'
   match '/signup', to: 'static_pages#signup'
   match '/homeplanner', to: 'static_pages#homeplanner'
+
+  match '/profile', to: 'planner#profile'
+  match '/venuesboard', to: 'static_pages#venuesboard'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
