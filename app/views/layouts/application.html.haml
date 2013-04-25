@@ -13,5 +13,7 @@
     = yield(:head)
   %body
     = render 'layouts/navigation'
+    %p{id: "notice"}
+      = notice
     = yield
     %footer
