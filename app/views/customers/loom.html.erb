@@ -6,13 +6,18 @@
 
 
   <div id="tileContainer">
-        <% @venues.each do |venue|  %>
-          <div style="margin: 5px; width: 300px;">
-            <%= link_to image_tag(venue.image), remove_path(:id => venue) %>
-          </div>
-        <% end %>
         <% @elements.each do |element|  %>
           <div style="margin: 5px; width: 300px;">
+            <span class="roll">
+              <center>
+                </br>
+                <%= link_to "Remove", remove_element_path(:id => element.id), :class => "btn btn-primary btn-large" %>
+                </br>
+                </br>
+                <%= link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary btn-large" %>
+              </center>
+            </span>
+            <!--<%= link_to image_tag(element.image), remove_element_path(:id => element), "data-toggle" => "tooltip", :class => "tooltip", :title => element.name + "</br>" + element.description %>-->
             <%= link_to image_tag(element.image), remove_element_path(:id => element) %>
           </div>
         <% end %>
