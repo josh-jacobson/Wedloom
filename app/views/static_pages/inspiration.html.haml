@@ -24,7 +24,11 @@
   = render :partial => 'elements', :locals => { :elements => @elements }
 
 %center
-  = link_to 'Load More Elements', inspiration_path(:page => @elements.next_page), :class => "loadmore", :remote => true if @elements.next_page
+  %br
+  %br
+  %h4
+    = link_to 'Load More Photos', inspiration_path(:page => @elements.next_page), :class => "loadmore", :remote => true if @elements.next_page
+  %br
 /
   %div
     = will_paginate(@elements)
