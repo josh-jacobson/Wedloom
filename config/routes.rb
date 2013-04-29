@@ -21,18 +21,17 @@ Testapp::Application.routes.draw do
   match '/add_element', to: 'customers#add_element'
   match '/remove_element', to: 'customers#remove_element'
 
-  match '/budget', to: 'static_pages#budget'
-  match '/carousel', to: 'static_pages#carousel'
-  match '/inspiration', to: 'static_pages#inspiration'
-  match '/canvas', to: 'static_pages#canvas'
-  match '/home', to: 'static_pages#home'
+
   match '/refine', to: 'static_pages#refine'
-  match '/planner', to: 'static_pages#planner'
+  match '/inspiration', to: 'static_pages#inspiration'
+  match '/home', to: 'static_pages#home'
+  match '/carlene', to: 'static_pages#carlene'
   match '/loom', to: 'customers#loom'
   match '/signup', to: 'static_pages#signup'
-  match '/homeplanner', to: 'static_pages#homeplanner'
-
   match '/profile', to: 'planners#profile'
+
+  # To be deleted after redoing the landing page:
+  match '/homeplanner', to: 'static_pages#homeplanner'
   match '/venuesboard', to: 'static_pages#venuesboard'
 
   # The priority is based upon order of creation:

@@ -5,13 +5,6 @@ class StaticPagesController < ApplicationController
   def homeplanner
   end
 
-  def about
-  end
-
-  def carousel
-    @category = params[:category]
-  end
-
   def inspiration
     if params[:category] == "venues"
       @elements = Element.where(:category => "Venue").paginate(:page => params[:page], :per_page => 15)
@@ -29,13 +22,10 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def canvas
-  end
-
   def refine
   end
 
-  def planner
+  def carlene
   end
 
   def signup
