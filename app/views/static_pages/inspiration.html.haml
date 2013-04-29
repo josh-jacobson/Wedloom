@@ -21,17 +21,11 @@
 
 / Inspiration board photos
 %div#container
+  = render :partial => 'elements', :locals => { :elements => @elements }
 
-  - @elements.each do |element|
-    %div{ style: "margin: 5px; width: 300px;"}
-      %span.roll
-        %center
-          %br
-          = link_to "Add to Loom", add_element_path(:id => element.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-primary btn-large addtoloom"
-          %br
-          %br
-          = link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary btn-large"
-      = image_tag(element.image)
-%div
-  = will_paginate(@elements)
+%center
+  = link_to 'Load More Elements', inspiration_path(:page => @elements.next_page), :class => "loadmore", :remote => true if @elements.next_page
+/
+  %div
+    = will_paginate(@elements)
 
