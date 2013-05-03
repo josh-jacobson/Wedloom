@@ -10,14 +10,13 @@ Testapp::Application.routes.draw do
   resources :venues
   resources :elements
   resources :users
+  resources :appointments
   root :to => 'static_pages#home'
 
   get "static_pages/home"
 
 
   match '/about', to: 'static_pages#about'
-  match '/add', to: 'customers#add'
-  match '/remove', to: 'customers#remove'
   match '/add_element', to: 'customers#add_element'
   match '/remove_element', to: 'customers#remove_element'
 
@@ -28,7 +27,7 @@ Testapp::Application.routes.draw do
   match '/carlene', to: 'static_pages#carlene'
   match '/loom', to: 'customers#loom'
   match '/signup', to: 'static_pages#signup'
-  match '/profile', to: 'planners#profile'
+  match '/schedule_appointment', to: 'customers#schedule_appointment'
 
   # To be deleted after redoing the landing page:
   match '/homeplanner', to: 'static_pages#homeplanner'

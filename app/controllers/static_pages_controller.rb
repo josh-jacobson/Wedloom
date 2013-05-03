@@ -20,6 +20,11 @@ class StaticPagesController < ApplicationController
       @elements = Element.paginate(:page => params[:page], :per_page => 15)
     end
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def refine

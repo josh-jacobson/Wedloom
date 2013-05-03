@@ -6,7 +6,7 @@
   = link_to "Dresses", {:controller => "static_pages", :action => "inspiration", :category => "dresses"}, :class => "btn btn-primary"
   = link_to "Invitations", {:controller => "static_pages", :action => "inspiration", :category => "invitations"}, :class => "btn btn-primary"
   = link_to "Flowers", {:controller => "static_pages", :action => "inspiration", :category => "flowers"}, :class => "btn btn-primary"
-  = link_to "Style", {:controller => "static_pages", :action => "inspiration", :category => "style"}, :class => "btn btn-primary"
+  = link_to "Decor", {:controller => "static_pages", :action => "inspiration", :category => "style"}, :class => "btn btn-primary"
 %hr
 
 /"Added to your loom" Bootstrap modal
@@ -29,6 +29,7 @@
   %h4
     = link_to 'Load More Photos', inspiration_path(:page => @elements.next_page), :class => "loadmore", :remote => true if @elements.next_page
   %br
+
 /
   %div
     = will_paginate(@elements)

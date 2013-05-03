@@ -1,6 +1,7 @@
 %center
   %h1 My Loom
   = link_to 'Connect with a Wedloom planner', refine_path, :class => "btn btn-primary btn-large"
+  = link_to 'Schedule an Appointment with Carlene', schedule_appointment_path, :class => "btn btn-primary btn-large"
   %hr
   #tileContainer
     - @elements.each do |element|

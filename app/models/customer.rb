@@ -14,4 +14,7 @@ class Customer < ActiveRecord::Base
   has_many :loomelements
   has_many :elements, :through => :loomelements
 
+  has_many :appointments
+  has_many :planners, :through => :appointments
+
 end

@@ -13,7 +13,6 @@
     = yield(:head)
   %body
     = render 'layouts/navigation'
-    %p{id: "notice"}
-      = notice
+    = render partial: "layouts/messages", flash: flash
     = yield
     %footer

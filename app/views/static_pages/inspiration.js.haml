@@ -1,5 +1,5 @@
 $('#container').append('#{escape_javascript(render partial: "elements", :locals => { :elements => @elements })}');
 $('a.loadmore').attr('href', '#{inspiration_path page: @elements.next_page}');
- 
+bindRoll
 - unless @elements.next_page
   $('a.loadmore').remove();

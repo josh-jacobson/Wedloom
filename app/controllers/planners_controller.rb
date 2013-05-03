@@ -1,9 +1,5 @@
 class PlannersController < ApplicationController
 	before_filter :authenticate_planner!
-
-  def profile
-    @planner = current_planner
-  end
   
   def edit
     @planner = current_planner
@@ -19,6 +15,16 @@ class PlannersController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @planner.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def show
+    @planner = current_planner
+    @appointments = @planner.appointments
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @planner }
     end
   end
 

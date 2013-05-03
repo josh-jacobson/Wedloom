@@ -17,14 +17,10 @@ class CustomersController < ApplicationController
       end
     end
   end
-  def add
-    @customer = current_customer
-    @customer.venues << Venue.find(params[:id])
-  end
 
-  def remove
+  def schedule_appointment
     @customer = current_customer
-    @customer.venues.delete(Venue.find(params[:id]))
+    @customer.appointments << Planner.find(1)
     redirect_to loom_path
   end
 
