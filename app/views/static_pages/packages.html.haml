@@ -1,0 +1,17 @@
+%center
+  %h1 
+    = image_tag("logo.jpg", :width => "190px")
+    Packages
+  %h3 Select one of the packages below to connect with one of our expert planners.
+  %hr
+
+
+  %h2 Silver Package
+  %h4 One 1-hour consultation
+  %form{:action => "", :method => "POST"}
+  %script.stripe-button{"data-amount" => "2000", "data-description" => "One 1-hour consultation", "data-image" => "/128x128.png", "data-key" => "pk_test_yty2D8Ok9MHFkiAfdYGauDVi", "data-name" => "Wedloom Silver Package", :src => "https://checkout.stripe.com/v2/checkout.js"}
+
+  %h2 Gold Package
+  %h4 Three 1-hour consultations
+  %form{:action => "", :method => "POST"}
+  %script.stripe-button{"data-amount" => "2000", "data-description" => "Three 1-hour consultations", "data-image" => "/128x128.png", "data-key" => "pk_test_yty2D8Ok9MHFkiAfdYGauDVi", "data-name" => "Wedloom", :src => "https://checkout.stripe.com/v2/checkout.js"}

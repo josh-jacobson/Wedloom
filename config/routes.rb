@@ -11,6 +11,8 @@ Testapp::Application.routes.draw do
   resources :elements
   resources :users
   resources :appointments
+  resources :charges
+
   root :to => 'static_pages#home'
 
   get "static_pages/home"
@@ -22,6 +24,7 @@ Testapp::Application.routes.draw do
 
 
   match '/refine', to: 'static_pages#refine'
+  match '/packages', to: 'charges#packages'
   match '/inspiration', to: 'static_pages#inspiration'
   match '/home', to: 'static_pages#home'
   match '/carlene', to: 'static_pages#carlene'

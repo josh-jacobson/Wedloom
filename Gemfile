@@ -15,6 +15,7 @@ gem 'jquery-ui-rails'
 gem 'pg'
 gem 'devise'
 gem 'will_paginate'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 

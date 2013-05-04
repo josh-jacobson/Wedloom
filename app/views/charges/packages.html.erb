@@ -1,0 +1,54 @@
+<center>
+
+  <h1><%= image_tag("logo.jpg", :width => "190px") %>Packages</h1>
+  <h3> Select a package below to connect with one of our expert planners.</h3>
+  </hr>
+
+  <div class="row-fluid">
+
+  <div class="span4">
+  <h2>Free Consultation</h2>
+  <h3>15-minute consultation with an expert Wedloom planner.</h3>
+  <%= link_to 'Schedule a Free Consultation', refine_path, :class => "btn btn-primary" %>
+</div>
+
+<div class="span4">
+  <h2>Silver Package</h2>
+  <h3>One 1-hour consultation</h3>
+
+  <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Amount: $60.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Wedloom Silver Package"
+            data-amount="6000"></script>
+  <% end %>
+</div>
+
+<div class="span4">
+
+  <h2>Gold Package</h2>
+  <h3>Three 1-hour consultations</h3>
+
+  <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Amount: $160.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Wedloom Gold Package"
+            data-amount="16000"></script>
+  <% end %>
+
+</div>
+</div>
+
+</center>
