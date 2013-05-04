@@ -1,0 +1,15 @@
+%center
+  %h1 
+    Connect with a 
+    = image_tag("logo.jpg", :width => "170px")
+    planner
+  %hr
+
+  - @planners.each do |planner|
+    %h1
+      = planner.name
+    %h3
+      = planner.description
+    = image_tag planner.photo if planner.photo?
+    = link_to 'Schedule a Free Consultation', schedule_appointment_path(id: planner.id), :class => "btn btn-primary btn-large"
+    =link_to("Website", planner.website, :class => "btn btn-large btn-primary", :target => '_blank') if planner.website?

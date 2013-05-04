@@ -17,4 +17,12 @@
 	=link_to 'Edit Profile', edit_planner_path(@planner), :class => "btn btn-primary btn-large"
 
 	%hr
-	%h2 My Clients:
+	%h2 My Appointments
+	- @appointments.each do |appointment|
+		%h4
+			Consultation with
+			= Customer.find(appointment.customer_id).name
+			on
+			= appointment.appointment_time.strftime("%B %d, %Y")
+			at
+			= appointment.appointment_time.strftime("%I:%M %p")

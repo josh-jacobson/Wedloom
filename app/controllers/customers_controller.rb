@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
 
   def schedule_appointment
     @customer = current_customer
-    @customer.planners << Planner.find(1)
+    @customer.planners << Planner.find(params[:id])
     redirect_to loom_path
   end
 

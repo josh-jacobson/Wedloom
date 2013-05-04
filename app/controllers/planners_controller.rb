@@ -1,6 +1,19 @@
 class PlannersController < ApplicationController
-	before_filter :authenticate_planner!
+	before_filter :authenticate_planner!, :only => [:edit]
+  before_filter :authenticate_planner!, :only => [:update]
+  before_filter :authenticate_planner!, :only => [:show]
+  before_filter :authenticate_planner!, :only => [:add_element]
+  before_filter :authenticate_planner!, :only => [:remove_element]
   
+  def index
+    @planners = Planner.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @planners }
+    end
+  end
+
   def edit
     @planner = current_planner
   end
@@ -19,24 +32,15 @@ class PlannersController < ApplicationController
   end
 
   def show
-    @planner = current_planner
-    @appointments = @planner.appointments
+    if planner_signed_in?
+      @planner = current_planner
+      @appointments = @planner.appointments
+    end
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @planner }
     end
-  end
-
-  def add
-    @planner = current_planner
-    @planner.venues << Venue.find(params[:id])
-  end
-
-  def remove
-    @planner = current_planner
-    @planner.venues.delete(Venue.find(params[:id]))
-    redirect_to loom_path
   end
 
   def add_element
