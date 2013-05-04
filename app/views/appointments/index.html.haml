@@ -2,12 +2,15 @@
 
 %table
   %tr
-    %th
-    %th
-    %th
+    %th Customer
+    %th Planner
+    %th Time
 
   - @appointments.each do |appointment|
     %tr
+      %td= Customer.find(appointment.customer_id).name
+      %td= Planner.find(appointment.planner_id).name
+      %td= appointment.appointment_time
       %td= link_to 'Show', appointment
       %td= link_to 'Edit', edit_appointment_path(appointment)
       %td= link_to 'Destroy', appointment, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
 
   def schedule_appointment
     @customer = current_customer
-    @customer.appointments << Planner.find(1)
+    @customer.planners << Planner.find(1)
     redirect_to loom_path
   end
 
@@ -37,10 +37,7 @@ class CustomersController < ApplicationController
 
   def loom
     @customer = current_customer
-    @venues = @customer.venues
     @elements = @customer.elements
-    @venue_cost = (@venues.size == 0) ? 10000 : @venues.map(&:rental_cost).inject(0, &:+) / @venues.length + @venues.map(&:cost_per_plate).inject(0, &:+) *150/@venues.length
-    @wedding_cost = @venue_cost / 0.4
+    @appointments = @customer.appointments
   end
-
 end

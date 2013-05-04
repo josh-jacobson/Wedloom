@@ -9,7 +9,7 @@ class PlannersController < ApplicationController
 
     respond_to do |format|
       if @planner.update_attributes(params[:planner])
-        format.html { redirect_to profile_path, notice: 'Your profile was successfully updated.' }
+        format.html { redirect_to current_planner, notice: 'Your profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

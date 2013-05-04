@@ -6,5 +6,22 @@
         - @appointment.errors.full_messages.each do |msg|
           %li= msg
 
+  .field
+    = f.label :planner_id
+    %br
+    = f.number_field :planner_id
+
+  .field
+    = f.label :customer_id
+    %br
+    = f.number_field :customer_id
+
+  .field
+    = f.label :appointment_time
+    %br
+    = f.date_select :appointment_time
+    %br
+    = f.time_select :appointment_time
+
   .actions
     = f.submit 'Save'

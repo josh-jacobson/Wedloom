@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20130503230708) do
   create_table "appointments", :force => true do |t|
     t.integer  "customer_id"
     t.integer  "planner_id"
-    t.datetime "apointment_time"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "appointment_time"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "customers", :force => true do |t|
