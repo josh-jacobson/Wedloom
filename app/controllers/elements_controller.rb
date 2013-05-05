@@ -22,7 +22,7 @@ class ElementsController < ApplicationController
   end
 
   def inspiration
-    if params[:category] == "venues"
+=begin    if params[:category] == "venues"
       @elements = Element.where(:category => "Venue").order("created_at DESC").paginate(:page => params[:page])
       #@elements = Element.where(:category => "Venue").page(params[:page])
     elsif params[:category] == "dresses"
@@ -34,14 +34,9 @@ class ElementsController < ApplicationController
     elsif params[:category] == "style"
       @elements = Element.where(:category => "Style").page(params[:page])
     else
-      @elements = Element.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
-      format.xml  { render :xml => @elements }
-    end
+=end
+      @elements = Element.order("created_at DESC").page(params[:page]).per_page(5)
+#    end
 
   end
 

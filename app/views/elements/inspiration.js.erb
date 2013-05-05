@@ -1,1 +1,6 @@
-$("#elements").append("<div class='page'><%= escape_javascript(render(@elements)) %></div>");
+$('#elements').append('<%= j render(@elements) %>');
+<% if @elements.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@elements) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
