@@ -13,7 +13,6 @@ gem 'devise'
 gem 'will_paginate'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'jquery-rails'
-gem 'kaminari'
 
 
 
