@@ -21,8 +21,8 @@
     %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
 
 / Inspiration board photos
-%div#container
-  = render :partial => 'elements', :locals => { :elements => @elements }
+%div#container.page
+  = render @elements
 
 %center
   %br

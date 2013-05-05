@@ -1,0 +1,56 @@
+%center
+  %h1 Inspiration Board
+  %h3 Build your Loom by adding the images that best match your style.
+  / Category choices
+  = link_to "All", inspiration_path, :class => "btn btn-primary"
+  = link_to "Venues", {:controller => "elements", :action => "inspiration", :category => "venues"}, :class => "btn btn-primary"
+  = link_to "Dresses", {:controller => "elements", :action => "inspiration", :category => "dresses"}, :class => "btn btn-primary"
+  = link_to "Invitations", {:controller => "elements", :action => "inspiration", :category => "invitations"}, :class => "btn btn-primary"
+  = link_to "Flowers", {:controller => "elements", :action => "inspiration", :category => "flowers"}, :class => "btn btn-primary"
+  = link_to "Decor", {:controller => "elements", :action => "inspiration", :category => "style"}, :class => "btn btn-primary"
+%hr
+
+/"Added to your loom" Bootstrap modal
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Added to your loom.
+  .modal-body
+  .modal-footer
+    = link_to "View Loom", loom_path, :class => "btn btn-primary"
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+
+#elements
+  .page
+    = render @elements
+:javascript
+  (function() {
+    var page = 1, // current page
+        loading = false; // currently loading a new page?
+    
+    function nearBottomOfPage() {
+      return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
+    }
+  
+    $(window).scroll(function(){
+      if (loading) { // do nothing if already loading a new page
+        return;
+      }
+      
+      if(nearBottomOfPage()) {
+        loading=true;
+        page++;
+        $.ajax({ // send an ajax-request to load the next page
+          url: '/inspiration?page=' + page,
+          type: 'get',
+          dataType: 'script',
+          success: function() { // after successfully completing the ajax-request redraw the sausage-navigation.
+            $(window).sausage('draw');
+            loading=false;
+          }
+        });
+      }
+    });
+      
+    $(window).sausage();
+  }());

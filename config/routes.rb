@@ -25,7 +25,7 @@ Testapp::Application.routes.draw do
   match '/profile', to: 'planners#profile'
   match '/refine', to: 'static_pages#refine'
   match '/packages', to: 'charges#packages'
-  match '/inspiration', to: 'static_pages#inspiration'
+  match '/inspiration', to: 'elements#inspiration'
   match '/home', to: 'static_pages#home'
   match '/carlene', to: 'static_pages#carlene'
   match '/loom', to: 'customers#loom'

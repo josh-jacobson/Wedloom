@@ -21,6 +21,29 @@ class ElementsController < ApplicationController
     end
   end
 
+  def inspiration
+    if params[:category] == "venues"
+      @elements = Element.where(:category => "Venue").page(params[:page]).per(3)
+    elsif params[:category] == "dresses"
+      @elements = Element.where(:category => "Dress").page(params[:page]).per(3)
+    elsif params[:category] == "invitations"
+      @elements = Element.where(:category => "Invitations").page(params[:page]).per(3)
+    elsif params[:category] == "flowers"
+      @elements = Element.where(:category => "Floral/Decor").page(params[:page]).per(3)
+    elsif params[:category] == "style"
+      @elements = Element.where(:category => "Style").page(params[:page]).per(3)
+    else
+      @elements = Element.page(params[:page]).per(3)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.xml  { render :xml => @elements }
+    end
+
+  end
+
   # GET /elements/new
   # GET /elements/new.json
   def new
