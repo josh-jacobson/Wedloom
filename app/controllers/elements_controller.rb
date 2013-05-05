@@ -23,17 +23,18 @@ class ElementsController < ApplicationController
 
   def inspiration
     if params[:category] == "venues"
-      @elements = Element.where(:category => "Venue").page(params[:page]).per(3)
+      @elements = Element.where(:category => "Venue").order("created_at DESC").paginate(:page => params[:page])
+      #@elements = Element.where(:category => "Venue").page(params[:page])
     elsif params[:category] == "dresses"
-      @elements = Element.where(:category => "Dress").page(params[:page]).per(3)
+      @elements = Element.where(:category => "Dress").page(params[:page])
     elsif params[:category] == "invitations"
-      @elements = Element.where(:category => "Invitations").page(params[:page]).per(3)
+      @elements = Element.where(:category => "Invitations").page(params[:page])
     elsif params[:category] == "flowers"
-      @elements = Element.where(:category => "Floral/Decor").page(params[:page]).per(3)
+      @elements = Element.where(:category => "Floral/Decor").page(params[:page])
     elsif params[:category] == "style"
-      @elements = Element.where(:category => "Style").page(params[:page]).per(3)
+      @elements = Element.where(:category => "Style").page(params[:page])
     else
-      @elements = Element.page(params[:page]).per(3)
+      @elements = Element.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
     end
 
     respond_to do |format|
