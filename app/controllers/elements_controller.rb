@@ -22,21 +22,19 @@ class ElementsController < ApplicationController
   end
 
   def inspiration
-=begin    if params[:category] == "venues"
-      @elements = Element.where(:category => "Venue").order("created_at DESC").paginate(:page => params[:page])
-      #@elements = Element.where(:category => "Venue").page(params[:page])
+    if params[:category] == "venues"
+      @elements = Element.where(:category => "Venue").page(params[:page]).per_page(5)
     elsif params[:category] == "dresses"
-      @elements = Element.where(:category => "Dress").page(params[:page])
+      @elements = Element.where(:category => "Dress").page(params[:page]).per_page(5)
     elsif params[:category] == "invitations"
-      @elements = Element.where(:category => "Invitations").page(params[:page])
+      @elements = Element.where(:category => "Invitations").page(params[:page]).per_page(5)
     elsif params[:category] == "flowers"
-      @elements = Element.where(:category => "Floral/Decor").page(params[:page])
+      @elements = Element.where(:category => "Floral/Decor").page(params[:page]).per_page(5)
     elsif params[:category] == "style"
-      @elements = Element.where(:category => "Style").page(params[:page])
+      @elements = Element.where(:category => "Style").page(params[:page]).per_page(5)
     else
-=end
       @elements = Element.order("created_at DESC").page(params[:page]).per_page(5)
-#    end
+    end
 
   end
 
