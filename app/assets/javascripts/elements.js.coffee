@@ -5,4 +5,7 @@ jQuery ->
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
         $('.pagination').text("Loading more photos...")
         $.getScript(url)
+        $('#container').freetile({
+          animate: false
+        });
     $(window).scroll()

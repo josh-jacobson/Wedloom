@@ -2,16 +2,15 @@ $(document).ready(function() {
 
   // Generate the grid layout using the freetile jQuery plugin
   $('#container').freetile({
-    animate: true,
-    elementDelay: 30
+    animate: true
   });
 
   // Event handling for hovering over images: 
   // 1. make button invisible
-  $(".roll").css("opacity","0");
+  // $(".roll").css("opacity","0");
 
   // 2. Make button appear when mouse hovers over image
-  $(".roll").hover(function () {
+  $('#container').on('hover', '.roll', function() {
     $(this).stop().animate({opacity: 1}, "slow");
   },
      
@@ -26,13 +25,6 @@ $(document).ready(function() {
   });
 
   $(".alert").alert()
-
-  $('a.loadmore').click(function() {
-    $('#container').freetile({
-      animate: true,
-      elementDelay: 30
-    });
-  });
     
 
 });
