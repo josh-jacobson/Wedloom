@@ -22,7 +22,7 @@ Testapp::Application.routes.draw do
   match '/add_element', to: 'customers#add_element'
   match '/remove_element', to: 'customers#remove_element'
 
-
+  match '/profile', to: 'planners#profile'
   match '/refine', to: 'static_pages#refine'
   match '/packages', to: 'charges#packages'
   match '/inspiration', to: 'static_pages#inspiration'

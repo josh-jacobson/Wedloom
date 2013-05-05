@@ -43,6 +43,11 @@ class PlannersController < ApplicationController
     end
   end
 
+  def profile
+    @planner = Planner.find(params[:id])
+    @appointments = @planner.appointments
+  end
+
   def add_element
     @planner = current_planner
     @planner.elements << Element.find(params[:id])
