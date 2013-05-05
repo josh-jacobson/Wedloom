@@ -7,15 +7,13 @@ gem 'rails', '3.2.11'
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
-#gem 'twitter-bootstrap-rails'
-#gem 'less'
-#gem 'less-rails'
-#gem 'therubyracer'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'devise'
 gem 'will_paginate'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'jquery-rails'
+gem 'kaminari'
 
 
 
@@ -36,7 +34,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
