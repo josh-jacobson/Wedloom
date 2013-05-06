@@ -9,6 +9,10 @@
   = link_to "Flowers", {:controller => "elements", :action => "inspiration", :category => "flowers"}, :class => "btn btn-primary"
   = link_to "Decor", {:controller => "elements", :action => "inspiration", :category => "style"}, :class => "btn btn-primary"
 %hr
+.alert.alert-info
+  %button.close{"data-dismiss" => "alert", :type => "button"} ×
+  %strong Welcome!
+  These photos are from real weddings in the Chicago area. Get inspiration and build a style profile by adding photos to your Loom. When your profile is complete, connect with a Wedloom planner to make your vision a reality.
 
 /"Added to your loom" Bootstrap modal
 #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
