@@ -3,9 +3,9 @@
     <center><h1>Connect with a <%= image_tag("logo.jpg", :width => "190px") %> planner</h1></center>
   </div>
   <div class="alert alert-info hidden-phone">
-    <a class="close" data-dismiss="alert">×</a>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
     <span>
-          <b>Ready to dive in?</b>&nbsp;Choose from the time that works best for you to schedule a free 15 minute consultation.</span> 
+          <b>Ready to dive in?</b>&nbsp;Select a planner below and schedule a free 15 minute consultation at a time that works for you.</span> 
   </div>
   <p class="lead">At Wedloom we hand-pick each one of our expert planners. Each planner has at least
     two years of wedding planning experience and has planned more than 10 weddings
@@ -20,8 +20,8 @@
     <div class="span7 well">
       <h2><%= planner.name %></h2>
       <p class="text-info lead"><%= planner.description %>&nbsp;</p>
-        <p><button class="btn btn-primary btn-large" data-appointlet="joshjacobson">Schedule a Consultation</button>
-      <%= link_to "Visit website", planner.website, :class => "btn btn-primary btn-large" %></p>
+        <p><button class="btn btn-primary btn-large" data-appointlet="joshjacobson">Schedule a free consultation</button>
+      <%= link_to "Visit website", planner.website, :class => "btn btn-primary btn-large", :target => "blank" %></p>
       <img src="//app.divshot.com/img/placeholder-100x100.gif">
         <img src="//app.divshot.com/img/placeholder-100x100.gif">
         <img src="//app.divshot.com/img/placeholder-100x100.gif">

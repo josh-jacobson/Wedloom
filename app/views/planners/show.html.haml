@@ -1,8 +1,16 @@
 %center
-	%h1
-		=@planner.name
-		's Profile
+	%h1 
+		- if @planner.name?
+			= @planner.name
+			's Profile
+		- else
+			My Profile
 	%hr
+
+	.alert.alert-info
+		%button.close{"data-dismiss" => "alert", :type => "button"} ×
+		%strong Welcome!
+		This is the dashboard for Wedloom planners. Complete your profile here and your information will be displayed to customers on the Planners page.
 
 	%h4
 		= @planner.description
