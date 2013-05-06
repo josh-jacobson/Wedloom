@@ -1,6 +1,10 @@
 class CustomersController < ApplicationController
 	before_filter :authenticate_customer!
 
+  def show
+    redirect_to loom_path
+  end
+
   def edit
     @customer = current_customer
   end

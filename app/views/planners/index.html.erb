@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="page-header">
+    <center><h1>Connect with a <%= image_tag("logo.jpg", :width => "190px") %> planner</h1></center>
+  </div>
+  <div class="alert alert-info hidden-phone">
+    <a class="close" data-dismiss="alert">×</a>
+    <span>
+          <b>Ready to dive in?</b>&nbsp;Choose from the time that works best for you to schedule a free 15 minute consultation.</span> 
+  </div>
+  <p class="lead">At Wedloom we hand-pick each one of our expert planners. Each planner has at least
+    two years of wedding planning experience and has planned more than 10 weddings
+    across Chicago.</p>
+  </br>
+
+<% @planners.each do |planner| %>  
+<div class="row">
+    <div class="span4">
+      <%= image_tag planner.photo, :width => "300" %>
+    </div>
+    <div class="span7 well">
+      <h2><%= planner.name %></h2>
+      <p class="text-info lead"><%= planner.description %>&nbsp;</p>
+        <p><button class="btn btn-primary btn-large" data-appointlet="joshjacobson">Schedule a Consultation</button>
+      <%= link_to "Visit website", planner.website, :class => "btn btn-primary btn-large" %></p>
+      <img src="//app.divshot.com/img/placeholder-100x100.gif">
+        <img src="//app.divshot.com/img/placeholder-100x100.gif">
+        <img src="//app.divshot.com/img/placeholder-100x100.gif">
+        <img src="//app.divshot.com/img/placeholder-100x100.gif">
+        <img src="//app.divshot.com/img/placeholder-100x100.gif"> 
+    </div>
+  </div>
+
+</br>
+
+<script>(function(e,t,n,r){if(e)return;t._appt=true;var i=n.createElement(r),s=n.getElementsByTagName(r)[0];i.async=true;i.src='//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';s.parentNode.insertBefore(i,s)})(window._appt,window,document,"script")</script>
+
+<% end %>
