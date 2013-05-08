@@ -6,7 +6,7 @@ class Planner < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :description, :photo, :website
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :description, :photo, :website, :image1, :image2, :image3, :image4, :image5, :appointlet
   # attr_accessible :title, :body
 
   has_many :appointments

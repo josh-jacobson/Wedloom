@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503230708) do
+ActiveRecord::Schema.define(:version => 20130508010817) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "customer_id"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20130503230708) do
     t.datetime "appointment_time"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "cards", :force => true do |t|
+    t.string   "suit"
+    t.string   "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "customers", :force => true do |t|
@@ -90,6 +97,12 @@ ActiveRecord::Schema.define(:version => 20130503230708) do
     t.text     "description"
     t.string   "photo"
     t.string   "website"
+    t.string   "image1"
+    t.string   "image2"
+    t.string   "image3"
+    t.string   "image4"
+    t.string   "image5"
+    t.string   "appointlet"
   end
 
   add_index "planners", ["email"], :name => "index_planners_on_email", :unique => true
