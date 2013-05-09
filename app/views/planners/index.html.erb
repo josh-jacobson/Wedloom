@@ -20,8 +20,14 @@
     <div class="span7 well">
       <h2><%= planner.name %></h2>
       <p class="text-info lead"><%= planner.description %>&nbsp;</p>
-        <p><button class="btn btn-primary btn-large" data-appointlet="joshjacobson" >Schedule a free consultation</button>
-      <%= link_to "Visit website", planner.website, :class => "btn btn-primary btn-large", :target => "blank" %></p>
+        <p><%= link_to "Buy a Package", packages_path, :class => "btn btn-primary btn-large" %>
+          <%- if customer_signed_in? %>
+          <button class="btn btn-action btn-large" data-appointlet="joshjacobson" >Schedule free consultation</button>
+          <%- else %>
+          <%= link_to "Schedule free consultation", new_customer_session_path, :class => "btn btn-action btn-large" %>
+          <%- end %>
+        </p>
+      
       <img src="//app.divshot.com/img/placeholder-100x100.gif">
         <img src="//app.divshot.com/img/placeholder-100x100.gif">
         <img src="//app.divshot.com/img/placeholder-100x100.gif">
