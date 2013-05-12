@@ -1,6 +1,51 @@
 %center
   %h1 My Loom
   %hr
+
+.container
+  .hero-unit.hidden-phone
+    %p Here are the photos you have chosen for your style profile:
+    %p
+      %br/
+    %p
+    %center
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
+    %br/
+    %center
+      = link_to 'Add More', inspiration_path, :class => "btn btn-info btn-large"
+  %a.btn.btn-large.btn-primary.btn-block.visible-phone{:href => "#"}
+    %span.btn-label Sign Up Today!
+  .row.main-features
+    .span12
+      .well.well-small
+        %h3 Your Profile
+        %h4
+        %p Help your planner learn more about you by completing your profile
+        .span6
+          .progress
+            .bar{:style => "width: 10%;"}
+        %br/
+        %br/
+        %p Name:
+        %p Number of Guests:
+        %p Wedding Date:
+        %p Estimated Budget:
+        %p Style:
+        %p Top 3 Priorities: _______   __________   _________
+        %p I am looking for help with : __________
+        %center
+          %a.btn.btn-info.btn-large Connect Me With A Planner
+
+
+
+%center
+  %h1 My Loom
+  %hr
   #tileContainer
     - @elements.each do |element|
       %center
