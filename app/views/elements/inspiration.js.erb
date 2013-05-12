@@ -1,6 +1,12 @@
 $('#container').append('<%= j render(@elements) %>');
+addButtons($(".roll"));
+
 <% if @elements.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@elements) %>');
 <% else %>
   $('.pagination').remove();
 <% end %>
+
+$('#container').freetile({
+    animate: false
+});
