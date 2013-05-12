@@ -42,6 +42,11 @@ class CustomersController < ApplicationController
   def loom
     @customer = current_customer
     @elements = @customer.elements
-    @appointments = @customer.appointments
+    @progress = 0
+    @progress += 1 if @customer.name?
+    @progress += 1 if @customer.wedding_date?
+    @progress += 1 if @customer.budget?
+    @progress += 1 if @customer.number_of_guests?
+    @progress = @progress * 100 / 4 
   end
 end

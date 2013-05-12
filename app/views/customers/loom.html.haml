@@ -1,88 +1,44 @@
 %center
   %h1 My Loom
-  %hr
-
-.container
-  .hero-unit.hidden-phone
-    %p Here are the photos you have chosen for your style profile:
-    %p
-      %br/
-    %p
-    %center
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-      %img{:src => "//app.divshot.com/img/placeholder-100x100.gif", :width => "250"}/
-    %br/
-    %center
-      = link_to 'Add More', inspiration_path, :class => "btn btn-info btn-large"
-  %a.btn.btn-large.btn-primary.btn-block.visible-phone{:href => "#"}
-    %span.btn-label Sign Up Today!
-  .row.main-features
-    .span12
-      .well.well-small
-        %h3 Your Profile
-        %h4
-        %p Help your planner learn more about you by completing your profile
-        .span6
-          .progress
-            .bar{:style => "width: 10%;"}
-        %br/
-        %br/
-        %p Name:
-        %p Number of Guests:
-        %p Wedding Date:
-        %p Estimated Budget:
-        %p Style:
-        %p Top 3 Priorities: _______   __________   _________
-        %p I am looking for help with : __________
-        %center
-          %a.btn.btn-info.btn-large Connect Me With A Planner
-
-
-
 %center
-  %h1 My Loom
-  %hr
-  #tileContainer
+  #tileContainer.well
     - @elements.each do |element|
       %center
       %div{:style => "margin: 5px; width: 300px;"}
         %span.roll
           %center
             %br
-            = link_to "Remove", remove_element_path(:id => element.id), :class => "btn btn-primary"
+            = link_to "Remove", remove_element_path(:id => element.id), :class => "btn btn-info"
             %br
             %br
-            = link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary"
+            = link_to "More Info", element_path(:id => element.id), :class => "btn btn-info"
         = link_to image_tag(element.image), remove_element_path(:id => element)
 
-  = link_to 'Get More Inspiration', inspiration_path, :class => "btn btn-primary btn-large"
+  = link_to 'Add More Photos', inspiration_path, :class => "btn btn-info btn-large"
+  = link_to "Connect with a Wedloom planner", planners_path, :class => "btn btn-info btn-large"
   %br
   %br
-  %hr
-  .row-fluid
-    .span6
-      %h2 Ready to make it happen?
-      = link_to "Connect with a Wedloom planner", planners_path, :class => "btn btn-primary btn-large"
-
-    .span6
-      %h2 Profile
-      %h4
-        %b Name:
-        = @customer.name
-      %h4
-        %b Wedding Date:
-        = @customer.wedding_date.strftime("%m/%d/%Y")
-      %h4
-        %b Budget:
-        $#{number_with_delimiter(@customer.budget, :delimiter => ',')}
-      %h4
-        %b Number of Guests:
-        = @customer.number_of_guests
-      = link_to 'Edit Profile', edit_customer_path(@customer), :class => "btn btn-primary btn-large"
-      %br
-      %br
-
+%center.container
+  .row.main-features
+    .span12
+      .well.well-small
+        %h2 Profile
+        %h4 Help your planner learn more about you by completing your profile.
+        .progress
+          .bar{:style => "width: #{@progress}%;"}
+        %h4
+          %b Name:
+          = @customer.name if @customer.name?
+        %h4
+          %b Wedding Date:
+          = @customer.wedding_date.strftime("%m/%d/%Y") if @customer.wedding_date?
+        %h4
+          %b Budget:
+          $
+          = number_with_delimiter(@customer.budget, :delimiter => ',') if @customer.budget?
+        %h4
+          %b Number of Guests:
+          = @customer.number_of_guests if @customer.number_of_guests?
+        = link_to 'Edit Profile', edit_customer_path(@customer), :class => "btn btn-info"
+        %br
+        %br
