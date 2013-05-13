@@ -31,8 +31,7 @@
                 <div class = "span">
                     <br>
                   <br>
-                  <br>
-                  <br>
+    <br>
                   <br>
                   <h2 id="shadow"><p align="left"> Expert wedding help
                     <br> at a price you can afford.
@@ -40,6 +39,8 @@
                   </h2>
                 </div>
            </div>
+
+           <%= button_to 'Get Started', inspiration_path, :class => 'btn btn-large btn-primary', :style => 'position: absolute' %>
        </div>
     </div>
 
@@ -50,6 +51,7 @@
 <div class="container-fluid" id="slogan">
     <div class="container light">
       <h1>Let us help you plan the wedding of your dreams.</h1>
+
       <center><a href="#" class="scroller" data-section="#whatweoffer"><img alt="" src="assets/downarrow.svg" width="3%"></img></a></center>
            <br>
       <br>
@@ -117,10 +119,11 @@
 
       <div class="row">
           <br><div class="span4"> <img alt="" src="assets/inspiration.png">
-            <h3><br><br>Select images and answer questions to create your profile </h3></div>
+            <h3><br><br>Select images and answer questions to create your profile </h3><%= link_to('Click to see real wedding pictures in Chicago', '/inspiration') %> </div>
           <div class="span4"> <br><br><br><br><center><img alt="" src="assets/rightarrow.svg"></center></div>
           <div class="span4"><img alt="" src="assets/carlene.png" height="76%;" style="max-width:76%;"></img>
-            <h3>Connect with a Wedloom expert planner via video chat to help you plan</h3></div>
+            <h3>Connect with a Wedloom planner via video chat to help you plan.</h3> <%= link_to('Click to learn more about our planners', '/carlene') %> 
+          </div>
       </div>
 
 
@@ -144,7 +147,8 @@
         </li>
       </ul> -->
 
-      <center><h3>Get to know your planner with a complimentary 15 min appointment</h3></center>
+      <center><h3>Before you sign up for a paid package,<br> we'll offer a complimentary 15 min consultation with one of our planners.</h3> <%= button_to 'Get started with a free trial', inspiration_path, :class => 'btn btn-large btn-primary', :style => 'position: absolute', :style => 'margin-left: 500px' %></center>
+      <br>
    </div>
 
 <style>
@@ -352,7 +356,7 @@ h1 {
 
 #whatweoffer {
   background:#000; /*not sure what this line is doing.*/
-  background:rgba(245, 246, 206, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  background:rgba(244, 241, 228, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
 
 }
 
@@ -364,7 +368,7 @@ h1 {
 
 #pricing {
   background:#000; /*not sure what this line is doing.*/
-  background:rgba(245, 246, 206, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  background:rgba(244, 241, 228, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
 
 }
 
@@ -548,12 +552,12 @@ margin:0 auto
         <div class="span4 plan">
           <div class="plan-name-silver">
             <h2>Silver</h2>
-            <span><h2>$60</h2></span>
+            <span><h2>$65</h2></span>
           </div>
           <ul>
-            <li class="plan-feature">One Hour Consultation</li>
-            <li class="plan-feature">Basic Timeline</li>
-            <li class="plan-feature">Basic Vendor Recommendations </li>
+            <li class="plan-feature">45-minute Expert Consultation</li>
+            <li class="plan-feature">Basic Planning Timeline</li>
+            <li class="plan-feature">Wedding Vendor Recommendations </li>
             <li class="plan-feature"> <br></li>
             <li class="plan-feature"> <br></li>
 
@@ -564,13 +568,13 @@ margin:0 auto
         <div class="span4 plan">
           <div class="plan-name-gold">
             <h2>Gold</h2>
-            <span><h2>$170</h2></span>
+            <span><h2>$180</h2></span>
           </div>
           <ul>
-            <li class="plan-feature">3 One Hour Consultations</li>
+            <li class="plan-feature">3 45-minute Consultations</li>
             <li class="plan-feature">Detailed Timeline</li>
             <li class="plan-feature">Extensive Vendor Recommendations</li>
-            <li class="plan-feature">Detailed Budget</li>
+            <li class="plan-feature">Budget Guidance</li>
             <li class="plan-feature"><br></li>
             <!-- <li class="plan-feature"><a href="#" class="btn btn-primary btn-plan-select"><i class="icon-white icon-ok"></i> Select</a></li> -->
           </ul>
@@ -578,24 +582,27 @@ margin:0 auto
         <div class="span4 plan">
           <div class="plan-name-platinum">
             <h2>Platinum</h2>
-            <span><h2>$330</h2></span>
+            <span><h2>$275</h2></span>
           </div>
           <ul>
-            <li class="plan-feature">6 One Hour Consultations</li>
+            <li class="plan-feature">5 45-minute Consultations</li>
             <li class="plan-feature">Detailed Timeline</li>
             <li class="plan-feature">Extensive Vendor Recommendations</li>
-            <li class="plan-feature">Detailed Budget</li>
+            <li class="plan-feature">Budget Guidance</li>
             <li class="plan-feature">Email Support</li>
             <!-- <li class="plan-feature"><a href="#" class="btn btn-primary btn-plan-select"><i class="icon-white icon-ok"></i> Select</a></li> -->
           </ul>
         </div>
       </div>
+     <hr>
+     Wedloom 2013
   </div>
+
 </div>
 
 
 
-</div>  -->  <!-- End Contact -->
+</div>  <!-- End Contact -->
   </div>
 <script>
 $(function () {
