@@ -50,10 +50,13 @@
          <!-- #COPY OF About -->
 <div class="container-fluid" id="slogan">
     <div class="container light">
-      <center><h1>Let us help you plan the wedding of your dreams.</h1></center>
+      <center><h1>Let us help you plan the wedding of your dreams. </h1></center>
       <br>
-      <h2> Thousands of details. Endless sources of options and advice. The pressure of planning one of the most important days of your life. No wonder wedding planning is so stessful. Wedloom will guide you through this confusing process by connecting you with a local wedding expert to give you the personalized advice you need when you want it to give you the peace of mind in the process. We are here to help.
-      </h2>
+      <h3> Thousands of details. Endless sources of options and advice. The pressure of planning one of the most important days of your life. No wonder wedding planning is so stessful, especially if you are doing it alone.
+      <br>
+      <br>
+       Wedloom is here to help. We will guide you through this confusing process by connecting you with a local wedding expert to give you personalized advice and to help you make the right decisions. We offer flexible times to work around your busy schedule and we use a high tech approach with video conferencing and online collaboration.
+      </h3>
 
       <center><a href="#" class="scroller" data-section="#whatweoffer"><img alt="" src="assets/downarrow.svg" width="3%"></img></a></center>
            <br>
@@ -75,12 +78,14 @@
       <center>
         <div class="container">
           <div class="span8" id="centering">
+          <table >
 
           <table class="table table-bordered" id ="whitetable" >
+            <col style="width:10%" span="5" />
             <thead>
               <tr>
-                <th id="tabletitle">Do It Yourself Planning</th>
-                <th id="tabletitle">Wedloom Planning</th>
+                <th id="tabletitle">Do It Yourself</th>
+                <th id="tabletitle">Wedloom </th>
               </tr>
             </thead>
             <tbody>
@@ -122,10 +127,10 @@
 
       <div class="row">
           <br><div class="span4"> <img alt="" src="assets/inspiration.png">
-            <h3><br><br>Select images and answer questions to create your profile </h3><%= link_to('Click to see real wedding pictures in Chicago', '/inspiration') %> </div>
+            <h3><br><br>Tell us about your vision by selecting real images from local weddings and by filling out your profile </h3><%= link_to('Click to see real wedding pictures in Chicago', '/inspiration') %> </div>
           <div class="span4"> <br><br><br><br><center><img alt="" src="assets/rightarrow.svg"></center></div>
           <div class="span4"><img alt="" src="assets/carlene.png" height="76%;" style="max-width:76%;"></img>
-            <h3>Connect with a Wedloom planner via video chat to help you plan.</h3> <%= link_to('Click to learn more about our planners', '/planners') %> 
+            <h3>Choose from one of our expert Wedloom planners and we will connect you via video chat during a time that is convenient for you.</h3> <%= link_to('Click to learn more about our planners', '/planners') %>
           </div>
       </div>
 
@@ -150,7 +155,9 @@
         </li>
       </ul> -->
 
-      <center><h3>Before you sign up for a paid package,<br> we'll offer a complimentary 15 min consultation with one of our planners.</h3> <%= button_to 'Get started with a free trial', inspiration_path, :class => 'btn btn-large btn-primary', :style => 'position: absolute', :style => 'margin-left: 500px' %></center>
+      <center><h3>Try us out first. Get started with a complimentary 15 min consultation with one of our planners. </h3> <br>
+
+        <%= button_to 'Sign up for a free trial', inspiration_path, :class => 'btn btn-large btn-primary', :style => 'position: absolute', :style => 'margin-left: 500px' %></center>
       <br>
    </div>
 
@@ -530,13 +537,13 @@ h1 {
 }
 
 #shadow {
-/*text-shadow: black 0.1em 0.1em 0.2em;*/
+text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 #tabletitle{
 font-size: 30px;
 color: #fff;
-background-color: #333a3b;
+background-color: #51b9af;
 text-align: center;
 padding: 1.75em 0;
 /*border-bottom: 20px solid #2d7988;*/
@@ -574,7 +581,7 @@ margin:0 auto
             <span><h2>$180</h2></span>
           </div>
           <ul>
-            <li class="plan-feature">3 45-minute Consultations</li>
+            <li class="plan-feature">Three 45-minute Consultations</li>
             <li class="plan-feature">Detailed Timeline</li>
             <li class="plan-feature">Extensive Vendor Recommendations</li>
             <li class="plan-feature">Budget Guidance</li>
@@ -588,7 +595,7 @@ margin:0 auto
             <span><h2>$275</h2></span>
           </div>
           <ul>
-            <li class="plan-feature">5 45-minute Consultations</li>
+            <li class="plan-feature">Five 45-minute Consultations</li>
             <li class="plan-feature">Detailed Timeline</li>
             <li class="plan-feature">Extensive Vendor Recommendations</li>
             <li class="plan-feature">Budget Guidance</li>
