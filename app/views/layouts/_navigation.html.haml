@@ -6,12 +6,13 @@
       .nav-collapse
 
         %ul.nav.pull-left
-          %li= link_to "Inspiration Board", inspiration_path
-          %li= link_to "Planners", planners_path
           - if customer_signed_in?
             %li= link_to "My Loom", loom_path
           - elsif planner_signed_in?
             %li= link_to "My Profile", current_planner
+          %li= link_to "Get Inspiration", inspiration_path
+          %li= link_to "Planners", planners_path
+          
 
         %ul.nav.pull-right
 
@@ -47,4 +48,4 @@
                 %li= link_to "Sign up", new_customer_registration_path
                 %li.divider
                 %li= link_to "Planner Login", new_planner_session_path
-                %li= link_to "Planner Sign up", new_planner_registration_path
+

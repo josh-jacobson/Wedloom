@@ -14,15 +14,45 @@
   %strong Welcome!
   These photos are from real weddings in the Chicago area. Get inspiration and build a style profile by adding photos to your Loom. When your profile is complete, connect with a Wedloom planner to make your vision a reality.
 
-/"Added to your loom" Bootstrap modal
-#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-  .modal-header
+- if customer_signed_in?
+  /"Added to your loom" Bootstrap modal
+  #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#myModalLabel Added to your loom.
+    .modal-body
+    .modal-footer
+      = link_to "View Loom", loom_path, :class => "btn btn-primary"
+      %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+
+- else
+  /"You must be logged in to do that" Bootstrap modal
+  #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#myModalLabel You must be logged in to do that.
+    .modal-body
+      %h4 Sign in or sign up for a wedloom account. It's free!
+    .modal-footer
+      = link_to "Sign In", new_customer_session_path, :class => "btn btn-primary"
+      = link_to "Sign Up", new_customer_registration_path, :class => "btn btn-primary"
+
+/ Tour Modal
+#tourModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "tourModalLabel", :role => "dialog", :tabindex => "-1"}
+  #tourHeader.modal-header
     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-    %h3#myModalLabel Added to your loom.
-  .modal-body
-  .modal-footer
-    = link_to "View Loom", loom_path, :class => "btn btn-primary"
+    %h3#tourModalLabel Welcome to Wedloom!
+
+  #tourBody.modal-body
+    %h4 
+      = image_tag "tour/welcome.jpg", :class => "tour-image"
+      We look forward to having our expert planners help you plan your special day. 
+      Until then, here's a quick tour to get you started.
+      
+  #tourFooter.modal-footer
     %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %a.btn.btn-primary.tour-slide2{"data-toggle" => "modal", :href => "#"} Next
+
 
 #container
   = render @elements
