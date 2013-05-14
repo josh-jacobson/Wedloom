@@ -11,7 +11,8 @@
             = link_to "Remove", remove_element_path(:id => element.id), :class => "btn btn-info"
             %br
             %br
-            = link_to "More Info", element_path(:id => element.id), :class => "btn btn-info"
+            - if element.category == "Venue"
+              = link_to "More Info", element_path(:id => element.id), :class => "btn btn-info"
         = link_to image_tag(element.image), remove_element_path(:id => element)
 
   = link_to 'Add More Photos', inspiration_path, :class => "btn btn-info btn-large"
