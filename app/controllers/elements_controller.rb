@@ -22,6 +22,7 @@ class ElementsController < ApplicationController
   end
 
   def inspiration
+    @home = false
     if params[:category] == "venues"
       @elements = Element.where(:category => "Venue").page(params[:page]).per_page(15)
     elsif params[:category] == "dresses"
@@ -34,6 +35,7 @@ class ElementsController < ApplicationController
       @elements = Element.where(:category => "Style").page(params[:page]).per_page(15)
     else
       @elements = Element.order("created_at DESC").page(params[:page]).per_page(15)
+      @home = true
     end
 
   end
