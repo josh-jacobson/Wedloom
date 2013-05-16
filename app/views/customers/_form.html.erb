@@ -12,20 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :wedding_date %><br />
+    <%= f.label :wedding_date %>
     <%= f.date_select :wedding_date %>
   </div>
   <div class="field">
-    <%= f.label :budget %><br />
+    <%= f.label :budget %>
     <%= f.number_field :budget %>
   </div>
   <div class="field">
-    <%= f.label :number_of_guests %><br />
+    <%= f.label :number_of_guests %>
     <%= f.number_field :number_of_guests %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wedding_city %>
+    <%= f.text_field :wedding_city %>
+  </div>
+
+  <div class="field">
+    <h4>Which of the following have you already figured out?</h4>
+    <%= f.check_box :booked_venue %> Venue</br>
+    <%= f.check_box :booked_catering %> Catering</br>
+    <%= f.check_box :booked_photographer %> Photographer</br>
+    <%= f.check_box :booked_florist %> Flowers</br>
+    <%= f.check_box :booked_entertainment %> Entertainment</br>
+  </div>
+
+  <div class="field">
+    <h4>What are the key things you'd like help with? Provide any other info here that will help your planner get to know you.</h4>
+    <%= f.text_area :more_info %>
   </div>
 
   <div class="actions">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508010817) do
+ActiveRecord::Schema.define(:version => 20130516160751) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "customer_id"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(:version => 20130508010817) do
     t.date     "wedding_date"
     t.integer  "budget"
     t.integer  "number_of_guests"
+    t.string   "wedding_city"
+    t.boolean  "booked_venue"
+    t.boolean  "booked_catering"
+    t.boolean  "booked_photographer"
+    t.boolean  "booked_florist"
+    t.boolean  "booked_entertainment"
+    t.text     "more_info"
   end
 
   add_index "customers", ["email"], :name => "index_customers_on_email", :unique => true
