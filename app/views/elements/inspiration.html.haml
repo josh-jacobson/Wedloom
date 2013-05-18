@@ -37,24 +37,27 @@
       = link_to "Sign In", new_customer_session_path, :class => "btn btn-primary"
       = link_to "Sign Up", new_customer_registration_path, :class => "btn btn-primary"
 
-/ Tour Modal
-#tourModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "tourModalLabel", :role => "dialog", :tabindex => "-1"}
-  #tourHeader.modal-header
-    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-    %h3#tourModalLabel Welcome to Wedloom!
-
-  #tourBody.modal-body
-    %h4 
-      = image_tag "tour/welcome.jpg", :class => "tour-image"
-      We look forward to having our expert planners help you plan your special day. 
-      Until then, here's a quick tour to get you started.
-      
-  #tourFooter.modal-footer
-    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
-    %a.btn.btn-primary.tour-slide2{"data-toggle" => "modal", :href => "#"} Next
-
-
 #container
   = render @elements
 
-= will_paginate @elements
+.hidden
+  = will_paginate @elements
+
+/ Tour Modal
+- if @home == true
+  #tourModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "tourModalLabel", :role => "dialog", :tabindex => "-1"}
+    #tourHeader.modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#tourModalLabel Welcome to Wedloom!
+
+    #tourBody.modal-body
+      %h4 
+        = image_tag "tour/welcome.jpg", :class => "tour-image"
+        We look forward to having our expert planners help you plan your special day. 
+        Until then, here's a quick tour to get you started.
+        
+    #tourFooter.modal-footer
+      %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+      %a.btn.btn-primary.tour-slide2{"data-toggle" => "modal", :href => "#"} Next
+
+

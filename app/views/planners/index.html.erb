@@ -5,14 +5,12 @@
   <div class="alert alert-info hidden-phone">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <span>
-          <b>Ready to dive in?</b>&nbsp;Select a planner below and schedule a free 15 minute consultation at a time that works for you.</span> 
+          <b>Ready to dive in?</b>&nbsp;Select a planner below and schedule a free 15 minute consultation at a time that works for you.</span>
   </div>
-  <p class="lead">At Wedloom we hand-pick each one of our expert planners. Each planner has at least
-    two years of wedding planning experience and has planned more than 10 weddings
-    across Chicago.</p>
+  <p class="lead">At Wedloom we hand-pick each one of our expert planners. Each planner has several years of wedding planning experience across Chicago and can help give you personal recommendations, answer questions, and guide you through this stressful process. </p>
   </br>
 
-<% @planners.each do |planner| %>  
+<% @planners.each do |planner| %>
 <div class="row">
     <div class="span4">
       <%= image_tag planner.photo, :width => "300" %>
