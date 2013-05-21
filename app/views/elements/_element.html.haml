@@ -2,9 +2,9 @@
   %span.roll
     %center
       %br
-      = link_to "Add to Loom", add_element_path(:id => element.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-primary btn-large addtoloom"
+      = link_to "Add to Loom", add_element_path(:id => element.id), :method => :put, :remote => true, "data-toggle" => "modal", 'data-target' => '#myModal', :class => "btn btn-info addtoloom"
       %br
       %br
       - if element.category == "Venue"
-        = link_to "More Info", element_path(:id => element.id), :class => "btn btn-primary btn-large"
+        = link_to "More Info", element_path(:id => element.id), :class => "btn btn-info"
   = image_tag(element.image)
