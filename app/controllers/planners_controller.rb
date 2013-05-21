@@ -1,7 +1,7 @@
 class PlannersController < ApplicationController
-	#before_filter :authenticate_planner!, :only => [:edit]
-  #before_filter :authenticate_planner!, :only => [:update]
-  #before_filter :authenticate_planner!, :only => [:show]
+	before_filter :authenticate_planner!, :only => [:edit]
+  before_filter :authenticate_planner!, :only => [:update]
+  before_filter :authenticate_planner!, :only => [:show]
   before_filter :authenticate_planner!, :only => [:add_element]
   before_filter :authenticate_planner!, :only => [:remove_element]
   
