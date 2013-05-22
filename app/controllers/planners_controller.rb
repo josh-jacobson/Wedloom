@@ -6,7 +6,7 @@ class PlannersController < ApplicationController
   before_filter :authenticate_planner!, :only => [:remove_element]
   
   def index
-    @planners = Planner.all
+    @planners = Planner.order("created_at").all
 
     respond_to do |format|
       format.html # index.html.erb
