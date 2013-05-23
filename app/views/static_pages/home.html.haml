@@ -1,0 +1,533 @@
+.main-container
+  #intro.container-fluid
+    .container
+      .row.about
+        .span
+          %br/
+          %br/
+          %br/
+          %br/
+          %h2#shadow/
+          %p{:align => "left"}
+            Expert wedding help
+            %br/
+            at a price you can afford.
+      = button_to 'Get Started', inspiration_path, :class => 'btn btn-large btn-primary', :style => 'position: absolute'
+  #slogan.container-fluid
+    .container.light
+      %center
+        %h1 Let us help you plan the wedding of your dreams.
+      %br/
+      %h3
+        Planning a wedding is hard. Let our expert planners help you plan your dream wedding, no matter where you are in the wedding planning process. 
+
+
+        %br/
+        %br/
+        Wedloom offers many of the key benefits of a wedding planner at a far lower cost. We can help with many aspects of wedding planning. Pick a track to get started:
+      %center
+        %a.scroller{"data-section" => "#packages", :href => "#"}
+          %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
+      %br/
+      %br/
+  #packages.container-fluid
+    .container.dark
+      %h1 Packages
+      %center
+        %h3 Not sure which package to choose? Get started with a complimentary 15 min consultation with one of our expert planners.
+        %br/
+        = link_to 'Sign up for a free consultation', planners_path, :class => 'btn btn-large btn-primary'
+      %br/
+    .row-fluid.pricing-table.pricing-three-column
+      .span4.plan
+        .plan-name-silver
+          %h2 Find Local Vendors
+        %ul
+          %li.plan-feature 45-minute Expert Consultation
+          %li.plan-feature Basic Planning Schedule
+          %li.plan-feature Basic Budget Guidance
+          %li.plan-feature
+          = link_to "View Packages", vendor_packages_path, :class => 'btn btn-large btn-primary'
+      .span4.plan
+        .plan-name-gold
+          %h2 Plan and Stay on Track
+        %ul
+          %li.plan-feature 3 45-minute Expert Consultations
+          %li.plan-feature Detailed Planning Schedule
+          %li.plan-feature Detailed Budget Guidance
+          %li.plan-feature
+          = link_to "View Packages", timeline_packages_path, :class => 'btn btn-large btn-primary'
+      .span4.plan
+        .plan-name-platinum
+          %h2 Stay within your Budget
+        %ul
+          %li.plan-feature 5 45-minute Expert Consultations
+          %li.plan-feature Detailed Planning Schedule
+          %li.plan-feature Detailed Budget Guidance
+          %li.plan-feature Tailored Vendor Recommendations
+          %li.plan-feature
+          = link_to "View Packages", budget_packages_path, :class => 'btn btn-large btn-primary'
+    %center
+      %a.scroller{"data-section" => "whatweoffer", :href => "#"}
+        %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
+      %br/
+    %hr/
+
+  #whatweoffer.container-fluid
+    .container.light
+      %center
+        %h1 Wedloom offers many of the key benefits of a wedding planner at a far lower cost.
+      %center
+        .container
+          #centering.span8
+            %table
+            %table#whitetable.table.table-bordered
+              %col{:span => "5", :style => "width:10%"}/
+              %thead
+                %tr
+                  %th#tabletitle Do It Yourself
+                  %th#tabletitle Wedloom
+              %tbody
+                %tr
+                  %td Sorting through thousands of websites
+                  %td Curated recommendations based on your style
+                %tr
+                  %td Don't know where to start
+                  %td A personal timeline and to-dos
+                %tr
+                  %td Uncertainty of setting a budget
+                  %td Our experts will make a budget and keep you to it
+                %tr
+                  %td.ds-editable-active Asking everyone for advice
+                  %td Trusted advice from an experienced planner 
+      %center
+        %a.scroller{"data-section" => "#howitworks", :href => "#"}
+          %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
+    %br/
+  #howitworks.container-fluid
+    .container.dark
+      %h1 How does it work?
+      /
+        <div class="row">
+        <div class="span4">
+      .row
+        %br/
+        .span4
+          %img{:alt => "", :src => "assets/inspiration.png"}/
+          %h3
+            %br/
+            = succeed "Tell" do
+              %br/
+            us about your vision by selecting real images from local weddings and by filling out your profile
+          = link_to('See real wedding pictures in Chicago', '/inspiration')
+        .span4
+          %br/
+          %br/
+          %br/
+          %br/
+          %center
+            %img{:alt => "", :src => "assets/rightarrow.svg"}/
+        .span4
+          %img{:alt => "", :height => "76%;", :src => "assets/carlene.png", :style => "max-width:76%;"}/
+          %h3 Choose from one of our expert Wedloom planners and we will connect you via video chat during a time that is convenient for you.
+          = link_to('Learn more about our planners', '/planners')
+      %center
+        %a.scroller{"data-section" => "#pricing", :href => "#"}
+          %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
+
+:css
+  .pricing-table .plan {
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f3f3f3;
+    -moz-box-shadow: 0 0 6px 2px #b0b2ab;
+    -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
+    box-shadow: 0 0 6px 2px #b0b2ab;
+  }
+  
+   .plan:hover {
+    background-color: #fff;
+    -moz-box-shadow: 0 0 12px 3px #b0b2ab;
+    -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
+    box-shadow: 0 0 12px 3px #b0b2ab;
+  }
+  
+   .plan {
+    padding: 20px;
+    color: #ff;
+    background-color: #5e5f59;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .plan-name-silver {
+    padding: 20px;
+    color: #fff;
+    background-color: #757575;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+   }
+  
+  .plan-name-platinum {
+    padding: 20px;
+    color: #fff;
+    background-color: #C0C0C0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+   }
+  
+  .plan-name-gold {
+    padding: 20px;
+    color: #fff;
+    background-color: #d9bb24;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    }
+  
+  .pricing-table-bronze  {
+    padding: 20px;
+    color: #fff;
+    background-color: #f89406;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .pricing-table .plan .plan-name span {
+    font-size: 20px;
+  }
+  
+  .pricing-table .plan ul {
+    list-style: none;
+    margin: 0;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .pricing-table .plan ul li.plan-feature {
+    padding: 15px 10px;
+    border-top: 1px solid #c5c8c0;
+  }
+  
+  .pricing-three-column {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .pricing-variable-height .plan {
+    float: none;
+    margin-left: 2%;
+    vertical-align: bottom;
+    display: inline-block;
+    zoom:1;
+    *display:inline;
+  }
+  
+  .plan-mouseover .plan-name {
+    background-color: #4e9a06 !important;
+  }
+  
+  .btn-plan-select {
+    padding: 8px 25px;
+    font-size: 18px;
+  }
+  
+  /* Setup Styles  */
+  #whitetable{
+    background-color: white;
+    text-align: center;
+    font-size:15px;
+  }
+  
+  body {
+    /* Change the background image here  */
+    background: url('/assets/banner.jpg') #FFF top center fixed no-repeat;
+  
+    background-size:100%;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  a, a:visited,{color:white;
+  
+    -webkit-transition:all .1s linear;
+    -moz-transition:all .1s linear;
+    -ms-transition:all .1s linear;
+    -o-transition:all .1s linear;
+    transition:all .1s linear;
+  
+  }
+  a:hover,a:active{color:#a43053;
+    text-decoration: none;
+  }
+  
+  
+  h1,h2,h3,h4,h5,h6 {
+    font-weight:300;
+  }
+  
+  h1 {
+    font-weight:300;
+    font-size:50px;
+    text-align:center;
+    line-height:55px;
+  
+    margin-bottom:30px;
+  }
+  
+  .dark {
+  
+  }
+  
+  .center {
+    float:none;
+    margin:0 auto;
+  }
+  
+  /* Main Container Styles  */
+  
+  .main-container {
+    position:relative;
+  
+  }
+  
+  .main-containerclear {
+    position:relative;
+  /*  height: 200px;*/
+  
+  }
+  
+  .main-container .container {
+    padding:30px;
+  }
+  
+  /* Section Styles  */
+  
+  #intro {
+    margin-top:100px;
+    text-align:center;
+    min-height:400px;
+    padding:0 0 50px;
+  }
+  
+  #intro h1 {
+    color:#fff;
+  }
+  
+  #intro p {
+    padding:15px 0;
+    color:#fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+  }
+  
+  #slogan {
+    background:#fff;
+  
+  
+  }
+  
+  
+  #about {
+    background:#fff;
+    background:rgba(255, 255, 255, 1);
+  
+  }
+  
+  #whatweoffer {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(244, 241, 228, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  
+  }
+  
+  #howitworks {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(255, 255, 255, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  
+  }
+  
+  #packages {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(244, 241, 228, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  
+  }
+  
+  
+  #team {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(255, 255, 204, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  
+  }
+  
+  #visualize {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(255, 255, 255, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+  }
+  
+  #connect {
+    background:#000; /*not sure what this line is doing.*/
+    background:rgba(255, 255, 204, 1); /*as you make the last number closer to 1, the background becomes more opaque (black)*/
+    /*height: 800px;*/
+  }
+  
+  
+  #contact {
+    background:#202020;
+  }
+  
+  
+  @media (max-width: 979px) {
+  
+  
+    body {
+      padding-right:0;
+      padding-left:0;
+      background-size:250%;
+    }
+  
+    #intro {
+    margin-top:45px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    body {
+      padding-right:0;
+      padding-left:0;
+      background-size:330%;
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      background-size:420%;
+    }
+  
+  }
+  
+  .btn-purple {
+    background-color:hsl(342,63%,34%)!important;
+    background-repeat:repeat-x;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#d54872",endColorstr="#8d2040");
+    background-image:-khtml-gradient(linear,left top,left bottom,from(#d54872),to(#8d2040));
+    background-image:-moz-linear-gradient(top,#d54872,#8d2040);
+    background-image:-ms-linear-gradient(top,#d54872,#8d2040);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#d54872),color-stop(100%,#8d2040));
+    background-image:-webkit-linear-gradient(top,#d54872,#8d2040);
+    background-image:-o-linear-gradient(top,#d54872,#8d2040);
+    background-image:linear-gradient(#d54872,#8d2040);
+    border-color:#8d2040 #8d2040 hsl(342,63%,28.5%);
+    color:#fff!important;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.36);
+    -webkit-font-smoothing:antialiased;
+  }
+  
+  .btn-xlarge {
+    padding:20px 40px;
+    font-size:25px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+  }
+  
+  /*  Team Social Icon Styles */
+  
+  
+  .social{
+    text-align: center;
+  }
+  .social img {
+    -webkit-transition:all .5s ease;
+    -moz-transition:all .5s ease;
+    -o-transition:all .5s ease;
+    -ms-transition:all .5s ease;
+    transition:all .5s ease;
+    margin-right: 4px;
+  }
+  
+  .social img:hover {
+    -webkit-transform:rotate(-15deg);
+    -moz-transform:rotate(-15deg);
+    -o-transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg);
+    transform:rotate(-15deg);
+  }
+  
+  /*  BigVideo Styles */
+  
+  
+  #big-video-wrap {
+    overflow:hidden;
+    position:fixed;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+  }
+  
+  #big-video-vid,#big-video-image {
+    position:absolute;
+  }
+  
+  #big-video-control-container {
+    position:fixed;
+    bottom:20px;
+    padding:0 20px;
+    width:100%;
+    -webkit-transition-duration:.6s;
+    -moz-transition-duration:.6s;
+    -ms-transition-duration:.6s;
+    -o-transition-duration:.6s;
+    transition-duration:.6s;
+  }
+  
+  #big-video-control {
+    width:100%;
+    height:16px;
+    position:relative;
+    display:none;
+  }
+  
+  #shadow {
+  text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  
+  #tabletitle{
+  font-size: 30px;
+  color: #fff;
+  background-color: #51b9af;
+  text-align: center;
+  padding: 1.75em 0;
+  
+  }
+  
+  #centering{
+  float:none;
+  margin:0 auto
+  }
+  
+:javascript
+  $(function () {
+      $(window).scroll(function(){
+      // global scroll to top button
+          if ($(this).scrollTop() > 300) {
+              $('.scrolltop').fadeIn();
+          } else {
+              $('.scrolltop').fadeOut();
+          }
+      });
+  
+      // scroll nav
+      $('.scroller').click(function(){
+        var section = $($(this).data("section"));
+        var top = section.offset().top-82;
+          $("html, body").animate({ scrollTop: top }, 700);
+          return false;
+      });
+  
+  });
