@@ -2,26 +2,19 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def homeplanner
-  end
-
-  def index
-    @articles = Article.order(:created_at).page(params[:page])
-
-    respond_to do |format|
-      format.js
-      format.html # index.html.erb
-      
-    end
-  end
-
   def refine
   end
 
-  def carlene
+  def signup
   end
 
-  def signup
+  def budget_packages
+  end
+
+  def timeline_packages
+  end
+
+  def vendor_packages
   end
 
   def venuesboard

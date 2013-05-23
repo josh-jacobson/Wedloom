@@ -17,7 +17,6 @@ Testapp::Application.routes.draw do
 
   get "static_pages/home"
 
-
   match '/about', to: 'static_pages#about'
   match '/add_element', to: 'customers#add_element'
   match '/remove_element', to: 'customers#remove_element'
@@ -27,14 +26,12 @@ Testapp::Application.routes.draw do
   match '/packages', to: 'charges#packages'
   match '/inspiration', to: 'elements#inspiration'
   match '/home', to: 'static_pages#home'
-  match '/carlene', to: 'static_pages#carlene'
   match '/loom', to: 'customers#loom'
   match '/signup', to: 'static_pages#signup'
   match '/schedule_appointment', to: 'customers#schedule_appointment'
-
-  # To be deleted after redoing the landing page:
-  match '/homeplanner', to: 'static_pages#homeplanner'
-  match '/venuesboard', to: 'static_pages#venuesboard'
+  match '/vendor_packages', to: 'static_pages#vendor_packages'
+  match '/budget_packages', to: 'static_pages#budget_packages'
+  match '/timeline_packages', to: 'static_pages#timeline_packages'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
