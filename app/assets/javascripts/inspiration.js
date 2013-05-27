@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
   $(window).load(function(){
-    if (localStorage.getItem('visited')) {
+    if (localStorage.getItem('visited') == true) {
       $('#tourModal').modal('show');
     }
     
-    localStorage.setItem( 'visited', true );
+    localStorage.setItem('visited', true);
 
   });
 
