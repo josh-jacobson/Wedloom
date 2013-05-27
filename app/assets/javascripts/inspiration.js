@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $(window).load(function(){
-    if (console.log( localStorage.getItem('visited'))) {
+    if (localStorage.getItem('visited')) {
       $('#tourModal').modal('show');
     }
     
