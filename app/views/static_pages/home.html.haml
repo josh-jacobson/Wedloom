@@ -21,10 +21,9 @@
       %h3
         Planning a wedding is hard. Let our expert planners help you plan your dream wedding, no matter where you are in the wedding planning process. 
 
-
         %br/
         %br/
-        Wedloom offers many of the key benefits of a wedding planner at a far lower cost. We can help with many aspects of wedding planning. Pick a track to get started:
+        We can help with many aspects of wedding planning. Pick a track to get started:
       %center
         %a.scroller{"data-section" => "#packages", :href => "#"}
           %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
@@ -32,7 +31,7 @@
       %br/
   #packages.container-fluid
     .container.dark
-      %h1 Packages
+      %h1 Wedloom offers many of the key benefits of a wedding planner at a far lower cost.
       %center
         %h3 Not sure which package to choose? Get started with a complimentary 15 min consultation with one of our expert planners.
         %br/
@@ -68,42 +67,11 @@
           %li.plan-feature
           = link_to "View Packages", budget_packages_path, :class => 'btn btn-large btn-primary'
     %center
-      %a.scroller{"data-section" => "whatweoffer", :href => "#"}
+      %a.scroller{"data-section" => "#howitworks", :href => "#"}
         %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
       %br/
     %hr/
 
-  #whatweoffer.container-fluid
-    .container.light
-      %center
-        %h1 Wedloom offers many of the key benefits of a wedding planner at a far lower cost.
-      %center
-        .container
-          #centering.span8
-            %table
-            %table#whitetable.table.table-bordered
-              %col{:span => "5", :style => "width:10%"}/
-              %thead
-                %tr
-                  %th#tabletitle Do It Yourself
-                  %th#tabletitle Wedloom
-              %tbody
-                %tr
-                  %td Sorting through thousands of websites
-                  %td Curated recommendations based on your style
-                %tr
-                  %td Don't know where to start
-                  %td A personal timeline and to-dos
-                %tr
-                  %td Uncertainty of setting a budget
-                  %td Our experts will make a budget and keep you to it
-                %tr
-                  %td.ds-editable-active Asking everyone for advice
-                  %td Trusted advice from an experienced planner 
-      %center
-        %a.scroller{"data-section" => "#howitworks", :href => "#"}
-          %img{:alt => "", :src => "assets/downarrow.svg", :width => "3%"}/
-    %br/
   #howitworks.container-fluid
     .container.dark
       %h1 How does it work?
@@ -119,7 +87,7 @@
             = succeed "Tell" do
               %br/
             us about your vision by selecting real images from local weddings and by filling out your profile
-          = link_to('See real wedding pictures in Chicago', '/inspiration')
+          = link_to('View photos of real weddings in Chicago', '/inspiration')
         .span4
           %br/
           %br/

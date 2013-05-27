@@ -1,7 +1,13 @@
 $(document).ready(function() {
 
   $(window).load(function(){
-    $('#tourModal').modal('show');
+    if (console.log( localStorage.getItem('visited'))) {
+      $('#tourModal').modal('show');
+    }
+    
+    localStorage.setItem( 'visited', true );
+
+
   });
   
   $(document).on("click", '.tour-slide2', function(e) {
