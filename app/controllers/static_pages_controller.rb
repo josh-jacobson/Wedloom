@@ -22,4 +22,7 @@ class StaticPagesController < ApplicationController
     redirect_to inspiration_path
   end
 
+  def get_started
+  end
+
 end

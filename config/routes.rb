@@ -32,6 +32,7 @@ Testapp::Application.routes.draw do
   match '/vendor_packages', to: 'static_pages#vendor_packages'
   match '/budget_packages', to: 'static_pages#budget_packages'
   match '/timeline_packages', to: 'static_pages#timeline_packages'
+  match '/get_started', to: 'static_pages#get_started'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

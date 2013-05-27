@@ -35,7 +35,7 @@
       %center
         %h3 Not sure which package to choose? Get started with a complimentary 15 min consultation with one of our expert planners.
         %br/
-        = link_to 'Sign up for a free consultation', planners_path, :class => 'btn btn-large btn-info'
+        %button.btn.btn-info.btn-large{"data-appointlet" => "joshjacobson"} Schedule a free consultation
       %br/
     .row-fluid.pricing-table.pricing-three-column
       .span4.plan
@@ -497,3 +497,6 @@
       });
   
   });
+
+:javascript
+  (function(e,t,n,r){if(e)return;t._appt=true;var i=n.createElement(r),s=n.getElementsByTagName(r)[0];i.async=true;i.src='//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';s.parentNode.insertBefore(i,s)})(window._appt,window,document,"script")
