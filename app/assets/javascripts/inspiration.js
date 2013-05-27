@@ -7,7 +7,11 @@ $(document).ready(function() {
     
     localStorage.setItem( 'visited', true );
 
+  });
 
+  $('#tourLink').click(function(e) {
+    $('#tourModal').modal('show');
+    e.preventDefault();
   });
   
   $(document).on("click", '.tour-slide2', function(e) {
