@@ -10,6 +10,8 @@
             %li= link_to "My Loom", loom_path
           - elsif planner_signed_in?
             %li= link_to "My Profile", current_planner
+          - else
+            %li= link_to "What We Offer", get_started_path
           %li= link_to "Get Inspiration", inspiration_path
           %li= link_to "Planners", planners_path
           
