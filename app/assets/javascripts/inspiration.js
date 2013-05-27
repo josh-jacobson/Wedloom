@@ -31,7 +31,7 @@ $(document).ready(function() {
     $("#tourHeader").append("<h3>Get Expert Guidance</h3>");
 
     $("#tourBody").empty();
-    $("#tourBody").append("<h4><img src=\"/assets/tour/carlene.png\" class=\"tour-image\">Once you’ve populated your Loom, connect with an expert planner who will help make your dreams a reality through online chats at a fraction of the cost of a full time planner!</h4>");
+    $("#tourBody").append("<h4><img src=\"/assets/tour/carlene.png\" class=\"tour-image\">Connect with an expert planner to get the help you need in making your dream wedding a reality. Our planners will help you find and book the perfect wedding vendors for your style and budget, all at a fraction of the cost of a full time planner!</h4>");
 
     $(".tour-slide3").remove();
     e.preventDefault();
