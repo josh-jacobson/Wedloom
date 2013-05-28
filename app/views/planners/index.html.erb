@@ -22,7 +22,7 @@
           <%- if customer_signed_in? %>
           <button class="btn btn-action btn-large" data-appointlet="joshjacobson" >Schedule free consultation</button>
           <%- else %>
-          <%= link_to "Schedule free consultation", new_customer_session_path, :class => "btn btn-action btn-large" %>
+          <%= link_to "Schedule free consultation", new_customer_registration_path, :class => "btn btn-action btn-large" %>
           <%- end %>
         </p>
         <%= image_tag planner.image1 %>
