@@ -10,8 +10,9 @@
 
 		.well
 			%h2
-				Wedloom Vendor Package
+				Comprehensive Vendor Package
 			%p
 				Wedloom can help you with all aspects of finding the perfect venue, caterer, photographer, etc., for you based on your wedding goals. We will take the time to learn about your style and priorities, and then provide you with curated recommendations based off what we know about you. Your wedding coach will help you gather pricing and availability information in an easily-comparable format, and even help you review your contracts. 
 			%center
-				= link_to "Select Package", "#", :class => 'btn btn-large btn-info'
+				%p Five 1-hour consultations. $300
+				%script.stripe-button{"data-amount" => "30000", "data-description" => "Comprehensive Vendor Package", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/v2/checkout.js"}

@@ -1,5 +1,5 @@
 %center
-	%h1 Timeline Packages
+	%h1 Planning Packages
 %hr
 .row-fluid
 	.span1
@@ -14,7 +14,8 @@
 			%p
 				We’ll help you create a customized timeline and to do list so you know what you need to do and when you need to have it done by. These tools will be tailored to your specific wedding goals. In addition to helping you construct an initial plan, your Wedloom coach will work with you throughout the planning process to keep you on track. 
 			%center
-				= link_to "Select Package", "#", :class => 'btn btn-large btn-info'
+				%p Five 1-hour consultations. $300
+				%script.stripe-button{"data-amount" => "30000", "data-description" => "Comprehensive Planning Package", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/v2/checkout.js"}
 
 		.well
 			%h3
@@ -22,5 +23,6 @@
 			%p
 				Have you already made a timeline/to do list and just want some help in checking it over? Our wedding coaches can tell you whether your expectations are realistic, ensure you aren’t forgetting any major pieces, and give you ideas of things you might want to add or remove in order to reach your goals.
 			%center
-				= link_to "Select Package", "#", :class => 'btn btn-large btn-info'
+				%p Two 1-hour consultations. $150
+				%script.stripe-button{"data-amount" => "15000", "data-description" => "Timeline Check-in Package", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/v2/checkout.js"}
 	.span1

@@ -9,17 +9,19 @@
 
 
 		.well
-			%h2
-				Help me create a budget plan
+			%h3
+				Comprehensive Budget Package
 			%p
 				Let us help you create a customized budget from scratch based on your goals. Your Wedloom coach will speak to you to learn about your priorities and spending goals, and will then work with you to optimize your spending so you get the best wedding you can afford. Once your budget plan is set, you can work with your wedding coach to refine it throughout the planning process using our collaborative budget tool. 
 			%center
-				= link_to "Select Package", "#", :class => 'btn btn-large btn-info'
+				%p Five 1-hour consultations. $300
+				%script.stripe-button{"data-amount" => "30000", "data-description" => "Comprehensive Budget Package", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/v2/checkout.js"}
 
 		.well
-			%h2 
-				Review my existing budget plan
+			%h3
+				Budget Check-in
 			%p
 				Already have a budget plan in place but want to find some ways to cut costs? One of our wedding coaches will work with you to find ways to save money, or help you reallocate your spending across categories based on what’s really important to you. 
 			%center
-				= link_to "Select Package", "#", :class => 'btn btn-large btn-info'
+				%p Two 1-hour consultations. $150
+				%script.stripe-button{"data-amount" => "15000", "data-description" => "Budget Check-in Package", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/v2/checkout.js"}
