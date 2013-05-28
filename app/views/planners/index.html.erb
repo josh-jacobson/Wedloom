@@ -18,7 +18,7 @@
     <div class="span7 well">
       <h2><%= planner.name %></h2>
       <p class="text-info lead"><%= planner.description %>&nbsp;</p>
-        <p><%= link_to "Buy a Package", packages_path, :class => "btn btn-primary btn-large" %>
+        <p><%= link_to "Buy a Package", packages_path, :class => "btn btn-info btn-large" %>
           <%- if customer_signed_in? %>
           <button class="btn btn-action btn-large" data-appointlet="joshjacobson" >Schedule free consultation</button>
           <%- else %>
