@@ -1,17 +1,8 @@
 %center
 	%h1 What We Offer
-.row-fluid
-	.span1
-	.span10
-		%center	
-			%h4 Wedloom's wedding coaches can help you save time, reduce stress and make smart choices that save you money. Everyone is different, so your package will be custom-tailored to meet your needs.  
-			%h4 Ready to get started?
-			%button.btn.btn-info.btn-large{"data-appointlet" => "joshjacobson"} Schedule a free consultation
-%hr
-
-
+	%br
 %center
-	%h3 Here are some specific areas we can help you with.
+	%h3 Here are some specific areas we can help you with:
 %center
 	.row-fluid
 		.span1
@@ -22,6 +13,7 @@
 					%br
 					%br
 					%p Vendor Discovery
+					%br
 				.span2.well.option#option2
 					= image_tag "pricetag.svg"
 					%br
@@ -32,27 +24,43 @@
 					%br
 					%br
 					%p Contract Review
+					%br
 				.span2.well.option#option4
 					= image_tag "ideabulb.svg"
 					%br
 					%br
 					%p Actionable Inspiration
+					%br
 				.span2.well.option#option5
 					= image_tag "moneybag.svg"
 					%br
 					%br
-					%p Budget Guidance	
+					%p Budget Guidance
+					%br
 				.span2.well.option#option6
 					= image_tag "checklist.svg"
 					%br
 					%br
 					%p Timline Planning
+					%br
 
 .row-fluid
 	.span1
 	.span10.well
 		%h3#explanation Wedloom coaches can provide personalized recommendations for venues, photographers, caterers and florists in the Chicago area based off your style and budget. We’ve worked with dozens of vendors and can give you advice you can’t find on Yelp.
 	.span1
+
+%hr
+.row-fluid
+	.span1
+	.span10
+		.container
+			%h3 Wedloom's wedding coaches can help you save time, reduce stress and make smart choices that save you money. Everyone is different, so your package will be custom-tailored to meet your needs.
+			%center
+				%h3 Ready to get started?
+				%button.btn.btn-info.btn-large{"data-appointlet" => "joshjacobson"} Schedule a free consultation
+%hr
+
 
 :css
 	.selected {
@@ -66,14 +74,18 @@
 	.span3
 		= image_tag "carlene/wedloom-profile.png", :width => "300"
 	.span8.well
-		%p.text-info.lead
-			Kristen worked with Wedloom to plan her wedding in 6 months in Chicago. Wedloom's expert planners helped her: 
-		%p
-			%strong Stay on track.
-			Kristen worked with Carlene to create a timeline personalized for her wedding date and met with Carlene to make sure everything was ready for the big day.
-		%p
-			%strong Find vendors. 
-			Given Kristen was planning a wedding in Chicago where some vendors book up over a year in advance, she worked with Carlene to find the perfect spot for her wedding. 
-		%p 
-			%strong Ask specific questions.
-			Kristen was the first in her family of 3 sisters to plan her wedding, so she had many questions typical of a first-time bride that Carlene was able to provide guidance every step of the way!
+		%h3
+			Kristen worked with Wedloom to plan her wedding in 6 months in Chicago. Wedloom's expert planners helped her:
+		%h4
+			%p
+				%br
+				%strong 1) Stay on track.
+				Kristen worked with Carlene to create a timeline personalized for her wedding date and met with Carlene to make sure everything was ready for the big day.
+			%br
+			%p
+				%strong 2) Find vendors.
+				Given Kristen was planning a wedding in Chicago where some vendors book up over a year in advance, she worked with Carlene to find the perfect spot for her wedding.
+			%br
+			%p
+				%strong 3) Ask specific questions.
+				Kristen was the first in her family of 3 sisters to plan her wedding, so she had many questions typical of a first-time bride that Carlene was able to provide guidance every step of the way!
